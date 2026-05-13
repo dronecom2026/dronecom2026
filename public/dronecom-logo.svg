@@ -27,10 +27,12 @@
       <stop offset="1" stop-color="#05275F"/>
     </radialGradient>
 
-    <filter id="softShadow" x="220" y="100" width="760" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <filter id="softShadow" x="180" y="80" width="840" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#00316F" flood-opacity="0.16"/>
     </filter>
   </defs>
+
+  <!-- Transparent background -->
 
   <g filter="url(#softShadow)">
     <!-- Wi-Fi signal -->
@@ -48,22 +50,24 @@
     <path d="M406 358L313 328" stroke="url(#deepBlue)" stroke-width="28" stroke-linecap="round"/>
     <path d="M794 358L887 328" stroke="url(#deepBlue)" stroke-width="28" stroke-linecap="round"/>
 
-    <!-- Left rotor -->
+    <!-- Left rotor / wing completed -->
     <g>
-      <ellipse cx="295" cy="322" rx="87" ry="42" fill="none" stroke="#2ECFFF" stroke-width="16"/>
-      <ellipse cx="295" cy="322" rx="62" ry="18" fill="#E5FCFF" opacity="0.92"/>
-      <ellipse cx="295" cy="322" rx="78" ry="34" fill="none" stroke="#0067C8" stroke-width="6" opacity="0.48"/>
-      <path d="M246 322C276 311 314 311 344 322" stroke="#70EAFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+      <ellipse cx="295" cy="322" rx="92" ry="45" fill="none" stroke="#2ECFFF" stroke-width="15"/>
+      <ellipse cx="295" cy="322" rx="76" ry="34" fill="none" stroke="#0067C8" stroke-width="7" opacity="0.55"/>
+      <ellipse cx="295" cy="322" rx="64" ry="20" fill="#E5FCFF" opacity="0.92"/>
+      <path d="M232 322C272 303 318 303 358 322" stroke="#70EAFF" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+      <path d="M232 322C272 341 318 341 358 322" stroke="#70EAFF" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
       <circle cx="295" cy="322" r="21" fill="url(#deepBlue)"/>
       <circle cx="295" cy="322" r="8" fill="#BAF8FF"/>
     </g>
 
-    <!-- Right rotor -->
+    <!-- Right rotor / wing completed -->
     <g>
-      <ellipse cx="905" cy="322" rx="87" ry="42" fill="none" stroke="#2ECFFF" stroke-width="16"/>
-      <ellipse cx="905" cy="322" rx="62" ry="18" fill="#E5FCFF" opacity="0.92"/>
-      <ellipse cx="905" cy="322" rx="78" ry="34" fill="none" stroke="#0067C8" stroke-width="6" opacity="0.48"/>
-      <path d="M856 322C886 311 924 311 954 322" stroke="#70EAFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+      <ellipse cx="905" cy="322" rx="92" ry="45" fill="none" stroke="#2ECFFF" stroke-width="15"/>
+      <ellipse cx="905" cy="322" rx="76" ry="34" fill="none" stroke="#0067C8" stroke-width="7" opacity="0.55"/>
+      <ellipse cx="905" cy="322" rx="64" ry="20" fill="#E5FCFF" opacity="0.92"/>
+      <path d="M842 322C882 303 928 303 968 322" stroke="#70EAFF" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+      <path d="M842 322C882 341 928 341 968 322" stroke="#70EAFF" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
       <circle cx="905" cy="322" r="21" fill="url(#deepBlue)"/>
       <circle cx="905" cy="322" r="8" fill="#BAF8FF"/>
     </g>
@@ -78,11 +82,9 @@
     <path d="M462 389C501 406 551 415 600 415C649 415 699 406 738 389"
           stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.58"/>
 
-    <!-- Landing legs -->
+    <!-- Landing legs only, extra connected parts removed -->
     <path d="M514 481C489 510 478 541 475 570" stroke="url(#deepBlue)" stroke-width="23" stroke-linecap="round"/>
     <path d="M686 481C711 510 722 541 725 570" stroke="url(#deepBlue)" stroke-width="23" stroke-linecap="round"/>
-    <path d="M477 570C497 557 516 550 536 546" stroke="#38D6FF" stroke-width="10" stroke-linecap="round" opacity="0.72"/>
-    <path d="M723 570C703 557 684 550 664 546" stroke="#38D6FF" stroke-width="10" stroke-linecap="round" opacity="0.72"/>
 
     <!-- Camera lens -->
     <circle cx="600" cy="438" r="50" fill="#FFFFFF"/>
