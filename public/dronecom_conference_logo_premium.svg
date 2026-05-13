@@ -1,0 +1,89 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>DroneCom Conference Premium Logo</title>
+  <desc>Premium minimal transparent SVG logo for DroneCom Conference with abstract drone, signal node, and refined wordmark.</desc>
+
+  <defs>
+    <linearGradient id="iconGradient" x1="88" y1="68" x2="354" y2="294" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="0.48" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+
+    <linearGradient id="bodyGradient" x1="181" y1="126" x2="270" y2="223" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <linearGradient id="wordGradient" x1="485" y1="95" x2="848" y2="182" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="0.66" stop-color="#172554"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <filter id="microShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <!-- Premium icon: abstract drone + communication node -->
+  <g filter="url(#microShadow)">
+    <!-- Four precise rotor nodes -->
+    <circle cx="118" cy="102" r="34" stroke="url(#iconGradient)" stroke-width="10"/>
+    <circle cx="332" cy="102" r="34" stroke="url(#iconGradient)" stroke-width="10"/>
+    <circle cx="118" cy="252" r="34" stroke="url(#iconGradient)" stroke-width="10"/>
+    <circle cx="332" cy="252" r="34" stroke="url(#iconGradient)" stroke-width="10"/>
+
+    <!-- Subtle inner rotor cuts -->
+    <path d="M97 102H139" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M118 81V123" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M311 102H353" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M332 81V123" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M97 252H139" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M118 231V273" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M311 252H353" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+    <path d="M332 231V273" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.92"/>
+
+    <!-- Streamlined frame -->
+    <path d="M151 105C178 112 193 131 204 151" stroke="url(#iconGradient)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M299 105C272 112 257 131 246 151" stroke="url(#iconGradient)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M151 249C178 242 193 223 204 203" stroke="url(#iconGradient)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M299 249C272 242 257 223 246 203" stroke="url(#iconGradient)" stroke-width="12" stroke-linecap="round"/>
+
+    <!-- Central body as clean rounded diamond/flight module -->
+    <path d="M225 124C254 124 278 148 278 177C278 206 254 230 225 230C196 230 172 206 172 177C172 148 196 124 225 124Z" fill="url(#bodyGradient)"/>
+    <path d="M206 165C206 155 214 147 224 147H226C236 147 244 155 244 165V189C244 199 236 207 226 207H224C214 207 206 199 206 189V165Z" fill="white" fill-opacity="0.96"/>
+    <circle cx="225" cy="177" r="10" fill="#2563EB"/>
+
+    <!-- Communication arcs integrated into upper-right rotor -->
+    <path d="M253 131C269 116 290 109 315 112" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M265 107C294 86 327 82 360 96" stroke="#2563EB" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="367" cy="101" r="5.5" fill="#0F172A"/>
+  </g>
+
+  <!-- Precision divider -->
+  <rect x="430" y="78" width="2.5" height="204" rx="1.25" fill="#E2E8F0"/>
+
+  <!-- Premium wordmark -->
+  <text x="482" y="163"
+        font-family="Aptos Display, Inter, Poppins, Montserrat, Arial, sans-serif"
+        font-size="76"
+        font-weight="800"
+        letter-spacing="-2.8"
+        fill="url(#wordGradient)">Drone<tspan fill="#2563EB">Com</tspan></text>
+
+  <text x="486" y="222"
+        font-family="Aptos, Inter, Poppins, Montserrat, Arial, sans-serif"
+        font-size="31"
+        font-weight="700"
+        letter-spacing="8.5"
+        fill="#475569">CONFERENCE</text>
+
+  <path d="M486 244H780" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+
+  <text x="486" y="279"
+        font-family="Aptos, Inter, Poppins, Montserrat, Arial, sans-serif"
+        font-size="21"
+        font-weight="500"
+        letter-spacing="0.1"
+        fill="#64748B">Autonomous Systems • Connectivity • Future Mobility</text>
+</svg>
