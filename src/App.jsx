@@ -137,7 +137,7 @@ const technicalProgramCommittee = [
 
 const webCoordinators = [
   {
-    name: "Nathan Kahsay Kidanu",
+    name: "Nathan Kahsay",
     affiliation: "Canadian University Dubai, UAE",
   },
 ];
