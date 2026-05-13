@@ -34,7 +34,7 @@ input {
   top: 0;
   left: 0;
   right: 0;
-  height: 78px;
+  height: 86px;
   padding: 0 42px;
   display: flex;
   align-items: center;
@@ -47,29 +47,33 @@ input {
 .brand {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 18px;
 }
 
 .brandLogo {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  box-shadow: 0 12px 26px rgba(0, 87, 184, 0.28);
+  width: 96px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  flex-shrink: 0;
 }
 
 .brand strong {
   display: block;
   color: #102033;
-  font-size: 18px;
+  font-size: 30px;
   line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 
 .brand small {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   color: #53657c;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .navLinks {
@@ -1047,6 +1051,7 @@ main {
 
 @media (max-width: 1020px) {
   .navbar {
+    height: 82px;
     padding: 0 22px;
   }
 
@@ -1075,6 +1080,19 @@ main {
 
   .navLinks a {
     padding: 14px 16px;
+  }
+
+  .brandLogo {
+    width: 84px;
+    height: 56px;
+  }
+
+  .brand strong {
+    font-size: 24px;
+  }
+
+  .brand small {
+    font-size: 16px;
   }
 
   .hero {
@@ -1122,7 +1140,11 @@ main {
 
 @media (max-width: 680px) {
   .navbar {
-    height: 72px;
+    height: 76px;
+  }
+
+  .brand {
+    gap: 10px;
   }
 
   .brand small {
@@ -1130,12 +1152,13 @@ main {
   }
 
   .brand strong {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .brandLogo {
-    width: 40px;
-    height: 40px;
+    width: 68px;
+    height: 46px;
+    object-fit: contain;
   }
 
   .hero {
