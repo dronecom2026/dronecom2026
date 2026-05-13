@@ -77,6 +77,71 @@ const organizers = [
   },
 ];
 
+const tpcCoChairs = [
+  {
+    name: "Kuljeet Kaur",
+    affiliation: "École de Technologie Supérieure, Montreal, Canada",
+  },
+  {
+    name: "Sherif Moussa",
+    affiliation: "Canadian University Dubai, UAE",
+  },
+];
+
+const technicalProgramCommittee = [
+  {
+    name: "Syed Hassan Shah",
+    affiliation: "Infineon Technologies, United States",
+  },
+  {
+    name: "Abbas Bradai",
+    affiliation: "Université Côte d’Azur, France",
+  },
+  {
+    name: "Shahid Mumtaz",
+    affiliation: "Nottingham Trent University, United Kingdom",
+  },
+  {
+    name: "Biplab Sikdar",
+    affiliation: "National University of Singapore, Singapore",
+  },
+  {
+    name: "Jia Hu",
+    affiliation: "University of Exeter, United Kingdom",
+  },
+  {
+    name: "Georges Kaddoum",
+    affiliation: "École de technologie supérieure, Canada",
+  },
+  {
+    name: "Brij B. Gupta",
+    affiliation: "Asia University, Taiwan",
+  },
+  {
+    name: "Ali Kashif Bashir",
+    affiliation: "Manchester Metropolitan University, United Kingdom",
+  },
+  {
+    name: "Keping Yu",
+    affiliation: "Hosei University, Japan",
+  },
+  {
+    name: "Anubhav Bhatia",
+    affiliation: "SAP Labs LLC, Palo Alto, California",
+  },
+  {
+    name: "Gwanggil Jeon",
+    affiliation: "Incheon National University, South Korea",
+  },
+];
+
+const webCoordinators = [
+  {
+    name: "Nathan Kahsay Kidanu",
+    affiliation: "Canadian University Dubai, UAE",
+  },
+];
+
 const previousEditions = [
   {
     edition: "1st International Workshop",
@@ -188,12 +253,15 @@ function App() {
 
   const filteredProgram = useMemo(() => {
     if (activeProgram === "All") return programItems;
+
     if (activeProgram === "Morning") {
       return programItems.filter((item) => Number(item.time.split(":")[0]) < 12);
     }
+
     if (activeProgram === "Afternoon") {
       return programItems.filter((item) => Number(item.time.split(":")[0]) >= 12);
     }
+
     return programItems;
   }, [activeProgram]);
 
@@ -259,7 +327,10 @@ function App() {
                 {importantDates.map((item, index) => (
                   <div key={item.label}>
                     <b>0{index + 1}</b>
-                    <span>{item.label}</span>
+                    <span>
+                      {item.label}
+                      <small>{item.date}</small>
+                    </span>
                   </div>
                 ))}
               </div>
@@ -281,8 +352,8 @@ function App() {
             <span>Technical Topics</span>
           </div>
           <div>
-            <strong>4</strong>
-            <span>Workshop Organizers</span>
+            <strong>Invited</strong>
+            <span>Speakers</span>
           </div>
         </section>
 
@@ -324,11 +395,23 @@ function App() {
               <>
                 <h3>Why DroneCom?</h3>
                 <p>
-                  5G networks are now widely deployed, while 6G research is
-                  rapidly gaining momentum. Future wireless systems demand
-                  higher throughput, ultra-low latency, dense connectivity, and
-                  reliable service quality for massive IoT and next-generation
-                  mobile applications.
+                  Fifth Generation mobile networks are now widely deployed
+                  worldwide, while research into Sixth Generation systems is
+                  rapidly gaining momentum. These networks are characterized by
+                  high throughput, ultra-low latency, dense connectivity, and
+                  ultra-reliable service quality. As massive IoT, smart cities,
+                  field automation, and data-intensive mobile services continue
+                  to grow, mobile backhaul becomes an essential component for
+                  realizing 5G, beyond-5G, and future 6G networks.
+                </p>
+                <p>
+                  Drone-assisted communication infrastructure offers a flexible
+                  and cost-effective way to supplement terrestrial networks,
+                  especially where deploying additional fixed infrastructure is
+                  expensive, delayed, or impractical. Drone-mounted platforms can
+                  support small cell backhaul, improve network reliability,
+                  relieve congestion, and enable rapid connectivity in dense,
+                  dynamic, or temporary scenarios.
                 </p>
               </>
             )}
@@ -337,13 +420,20 @@ function App() {
               <>
                 <h3>What problems does it address?</h3>
                 <p>
-                  Mobile backhaul is becoming a critical component of dense
-                  heterogeneous networks. However, fixed terrestrial deployment
-                  can be costly and inflexible. Drone-mounted infrastructure
-                  creates new opportunities, but also introduces challenges such
-                  as multi-drone coordination, crash avoidance, intermittent
-                  connectivity, limited endurance, security, and resource
-                  management.
+                  Dense heterogeneous networks require scalable backhaul
+                  solutions that can adapt to changing traffic demand. However,
+                  wireless backhauling often depends on small cell base stations,
+                  and the installation of additional terrestrial infrastructure
+                  may not be acceptable due to cost, deployment time, or
+                  geographic constraints.
+                </p>
+                <p>
+                  Drone-enabled networking introduces important research
+                  challenges, including the lack of fixed backhaul links,
+                  multi-drone coordination, collision and crash avoidance,
+                  sparse and intermittently connected topologies, limited
+                  endurance, constrained communication resources, restricted
+                  computation capability, and secure resource management.
                 </p>
               </>
             )}
@@ -352,11 +442,20 @@ function App() {
               <>
                 <h3>Workshop objective</h3>
                 <p>
-                  DroneCom 2026 aims to bring together researchers and
-                  practitioners to present ideas, field trials, protocols,
-                  architectures, AI/ML methods, and practical systems that
-                  advance drone-assisted wireless communications for 5G,
-                  beyond-5G, and 6G networks.
+                  DroneCom 2026 aims to bring together researchers, engineers,
+                  industry practitioners, and academic experts to share new
+                  ideas, latest findings, practical experiences, testbeds, and
+                  state-of-the-art results on drone-assisted wireless
+                  communications.
+                </p>
+                <p>
+                  The workshop encourages contributions on communication
+                  protocols, channel modelling, drone-ground and drone-drone
+                  communications, massive MIMO backhaul, SDN/NFV architectures,
+                  AI/ML-based routing, security, authentication, energy-aware
+                  deployment, interference management, standardization, field
+                  trials, and other applications for integrating drones into 5G
+                  and beyond networks.
                 </p>
               </>
             )}
@@ -364,7 +463,7 @@ function App() {
 
           <div className="topicSection">
             <div className="topicIntro">
-              <p className="eyebrow">Topics of Interest</p>
+              <p className="eyebrow light">Topics of Interest</p>
               <h3>Searchable Technical Areas</h3>
               <p>
                 Authors are invited to submit work related to the following
@@ -402,9 +501,10 @@ function App() {
             <p className="eyebrow">Submission</p>
             <h2>Submission Information</h2>
             <p>
-              The official paper submission link will be updated shortly. Please
-              follow the important dates below for submission, notification,
-              camera-ready version, and workshop attendance.
+              Authors can submit papers through the official DroneCom 2026
+              HotCRP submission system. Please follow the important dates below
+              for submission, notification, camera-ready version, and workshop
+              attendance.
             </p>
           </div>
 
@@ -422,16 +522,21 @@ function App() {
           <div className="submissionPanel">
             <div>
               <p className="eyebrow light">Submission Link</p>
-              <h3>Coming Soon</h3>
+              <h3>HotCRP Submission Portal</h3>
               <p>
-                The submission portal has not been announced yet. This section
-                can later be updated with the official submission link and
-                formatting instructions.
+                Authors can submit papers through the official DroneCom 2026
+                HotCRP submission system. Please ensure that submissions follow
+                the workshop instructions and the announced deadlines.
               </p>
             </div>
 
-            <a className="disabledButton" href="#submission">
-              Link will be updated shortly
+            <a
+              className="submitButton"
+              href="https://dronecom26.hotcrp.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Submit via HotCRP
             </a>
           </div>
         </section>
@@ -439,28 +544,72 @@ function App() {
         <section id="committees" className="section">
           <div className="sectionHeader center">
             <p className="eyebrow">Committees</p>
-            <h2>Workshop Organizers</h2>
+            <h2>Workshop Committees</h2>
             <p>
-              DroneCom 2026 is organized by researchers from institutions in the
-              UAE, Italy, the Netherlands, and South Korea.
+              DroneCom 2026 is supported by workshop organizers, TPC co-chairs,
+              the technical program committee, and coordination contributors
+              from international institutions.
             </p>
           </div>
 
-          <div className="organizerGrid">
-            {organizers.map((person) => (
-              <div className="organizerCard" key={person.email}>
-                <div className="avatar">
-                  {person.name
-                    .split(" ")
-                    .map((part) => part[0])
-                    .join("")
-                    .slice(0, 2)}
+          <div className="committeeBlock">
+            <h3>Workshop Organizers</h3>
+
+            <div className="organizerGrid">
+              {organizers.map((person) => (
+                <div className="organizerCard" key={person.email}>
+                  <div className="avatar">
+                    {person.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .join("")
+                      .slice(0, 2)}
+                  </div>
+                  <h4>{person.name}</h4>
+                  <p>{person.affiliation}</p>
+                  <a href={`mailto:${person.email}`}>{person.email}</a>
                 </div>
-                <h3>{person.name}</h3>
-                <p>{person.affiliation}</p>
-                <a href={`mailto:${person.email}`}>{person.email}</a>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="committeeBlock">
+            <h3>TPC Co-Chairs</h3>
+
+            <div className="simpleCommitteeGrid">
+              {tpcCoChairs.map((person) => (
+                <div className="simpleCommitteeCard" key={person.name}>
+                  <h4>{person.name}</h4>
+                  <p>{person.affiliation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="committeeBlock">
+            <h3>Technical Program Committee</h3>
+
+            <div className="tpcGrid">
+              {technicalProgramCommittee.map((person) => (
+                <div className="tpcCard" key={person.name}>
+                  <h4>{person.name}</h4>
+                  <p>{person.affiliation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="committeeBlock">
+            <h3>Web Coordinator</h3>
+
+            <div className="simpleCommitteeGrid">
+              {webCoordinators.map((person) => (
+                <div className="simpleCommitteeCard" key={person.name}>
+                  <h4>{person.name}</h4>
+                  <p>{person.affiliation}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -490,10 +639,12 @@ function App() {
             {filteredProgram.map((item) => (
               <div className="programItem" key={`${item.time}-${item.title}`}>
                 <div className="programTime">{item.time}</div>
+
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.speaker}</p>
                 </div>
+
                 <span>{item.status}</span>
               </div>
             ))}
@@ -513,10 +664,16 @@ function App() {
           <div className="historyGrid">
             {previousEditions.map((item, index) => (
               <div
-                className={openEdition === index ? "editionCard open" : "editionCard"}
+                className={
+                  openEdition === index ? "editionCard open" : "editionCard"
+                }
                 key={item.edition}
               >
-                <button onClick={() => setOpenEdition(openEdition === index ? -1 : index)}>
+                <button
+                  onClick={() =>
+                    setOpenEdition(openEdition === index ? -1 : index)
+                  }
+                >
                   <span>{item.edition}</span>
                   <b>{openEdition === index ? "−" : "+"}</b>
                 </button>
@@ -564,10 +721,11 @@ function Header({ menuOpen, setMenuOpen }) {
     <header className="navbar">
       <a href="#home" className="brand">
         <img
-        src={`${import.meta.env.BASE_URL}dronecom-logo.svg`}
-        alt="DroneCom 2026 logo"
-        className="brandLogo"
+          src={`${import.meta.env.BASE_URL}dronecom-logo.svg`}
+          alt="DroneCom 2026 logo"
+          className="brandLogo"
         />
+
         <span>
           <strong>DroneCom 2026</strong>
           <small>ACM MobiCom Workshop</small>
