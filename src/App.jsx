@@ -721,10 +721,10 @@ function Header({ menuOpen, setMenuOpen }) {
     <header className="navbar">
       <a href="#home" className="brand">
         <img
-          src={`${import.meta.env.BASE_URL}dronecom-logo.svg`}
-          alt="DroneCom 2026 logo"
+          src={`${import.meta.env.BASE_URL}dronecom-logo.png`}
+          alt="DroneCom logo"
           className="brandLogo"
-        />
+          />
 
         <span>
           <strong>DroneCom 2026</strong>
