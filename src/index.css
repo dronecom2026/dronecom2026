@@ -38,12 +38,12 @@ input {
   top: 0;
   left: 0;
   right: 0;
-  height: 78px;
-  padding: 0 42px;
+  height: 140px;
+  padding: 0 46px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(248, 251, 255, 0.96);
+  background: rgba(248, 251, 255, 0.97);
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(18px);
 }
@@ -51,55 +51,52 @@ input {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
-  min-width: 360px;
+  gap: 26px;
+  min-width: 680px;
 }
 
 .brandLogo {
-  width: 72px;
-  height: 52px;
+  width: 250px;
+  height: 118px;
   object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
-  padding: 4px;
-  border-radius: 18px;
-  background: linear-gradient(
-    135deg,
-    rgba(234, 248, 255, 0.95),
-    rgba(255, 255, 255, 0.75)
-  );
-  border: 1px solid rgba(0, 87, 184, 0.12);
-  box-shadow: 0 12px 28px rgba(0, 87, 184, 0.12);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .brand strong {
   display: block;
   color: #102033;
-  font-size: 24px;
+  font-size: 42px;
   line-height: 1;
-  font-weight: 900;
-  letter-spacing: -0.035em;
+  font-weight: 950;
+  letter-spacing: -0.055em;
 }
 
 .brand small {
   display: block;
-  margin-top: 6px;
+  margin-top: 14px;
   color: #53657c;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-size: 26px;
+  font-weight: 850;
+  letter-spacing: -0.025em;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .navLinks a {
-  padding: 10px 13px;
+  padding: 11px 15px;
   border-radius: 999px;
   color: #243449;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 850;
   transition: 0.2s ease;
   white-space: nowrap;
@@ -134,7 +131,7 @@ main {
 .hero {
   position: relative;
   min-height: 92vh;
-  padding: 150px 42px 105px;
+  padding: 215px 42px 105px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1103,9 +1100,33 @@ main {
    RESPONSIVE
 ========================= */
 
+@media (max-width: 1200px) {
+  .brand {
+    min-width: 560px;
+  }
+
+  .brandLogo {
+    width: 210px;
+    height: 100px;
+  }
+
+  .brand strong {
+    font-size: 34px;
+  }
+
+  .brand small {
+    font-size: 22px;
+  }
+
+  .navLinks a {
+    font-size: 13px;
+    padding: 9px 10px;
+  }
+}
+
 @media (max-width: 1020px) {
   .navbar {
-    height: 78px;
+    height: 104px;
     padding: 0 22px;
   }
 
@@ -1115,7 +1136,7 @@ main {
 
   .navLinks {
     position: fixed;
-    top: 88px;
+    top: 114px;
     left: 20px;
     right: 20px;
     display: none;
@@ -1134,27 +1155,30 @@ main {
 
   .navLinks a {
     padding: 14px 16px;
+    font-size: 14px;
   }
 
   .brand {
     min-width: auto;
+    gap: 16px;
   }
 
   .brandLogo {
-    width: 62px;
-    height: 46px;
+    width: 150px;
+    height: 74px;
   }
 
   .brand strong {
-    font-size: 21px;
+    font-size: 26px;
   }
 
   .brand small {
-    font-size: 13px;
+    font-size: 16px;
+    margin-top: 7px;
   }
 
   .hero {
-    padding: 130px 22px 100px;
+    padding: 165px 22px 100px;
   }
 
   .heroInner {
@@ -1198,7 +1222,7 @@ main {
 
 @media (max-width: 680px) {
   .navbar {
-    height: 74px;
+    height: 86px;
     padding: 0 16px;
   }
 
@@ -1207,23 +1231,25 @@ main {
   }
 
   .brandLogo {
-    width: 54px;
-    height: 42px;
-    padding: 3px;
-    border-radius: 14px;
+    width: 92px;
+    height: 54px;
   }
 
   .brand strong {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .brand small {
     display: none;
   }
 
+  .navLinks {
+    top: 96px;
+  }
+
   .hero {
     min-height: auto;
-    padding: 120px 18px 90px;
+    padding: 130px 18px 90px;
   }
 
   .hero h1 {
