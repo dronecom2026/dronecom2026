@@ -352,8 +352,8 @@ function App() {
             <span>Technical Topics</span>
           </div>
           <div>
-            <strong>Invited</strong>
-            <span>Speakers</span>
+            <strong>2</strong>
+            <span>Invited Speakers</span>
           </div>
         </section>
 
