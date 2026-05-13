@@ -1,14 +1,130 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="128" fill="url(#paint0_linear)"/>
-  <path d="M169 138H255C314.1 138 356 178.4 356 256C356 333.6 314.1 374 255 374H169V138ZM220.5 183.5V328.5H252.8C283.4 328.5 303.2 304.1 303.2 256C303.2 207.9 283.4 183.5 252.8 183.5H220.5Z" fill="white"/>
-  <circle cx="368" cy="143" r="28" fill="#8EEAFF" fill-opacity="0.95"/>
-  <path d="M368 95C394.5 95 416 116.5 416 143" stroke="#8EEAFF" stroke-width="17" stroke-linecap="round" opacity="0.65"/>
-  <path d="M368 63C412.2 63 448 98.8 448 143" stroke="#8EEAFF" stroke-width="15" stroke-linecap="round" opacity="0.35"/>
+<svg width="1800" height="1100" viewBox="0 0 1800 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>DroneCom Premium Logo</title>
+  <desc>Refined premium vector logo for DroneCom: drone, 5G wireless signal, and professional conference wordmark.</desc>
+
   <defs>
-    <linearGradient id="paint0_linear" x1="66" y1="50" x2="448" y2="463" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0057B8"/>
-      <stop offset="0.52" stop-color="#0077FF"/>
-      <stop offset="1" stop-color="#003F88"/>
+    <linearGradient id="bodyBlue" x1="520" y1="310" x2="1260" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5BE8FF"/>
+      <stop offset="0.42" stop-color="#0088E8"/>
+      <stop offset="1" stop-color="#08306F"/>
     </linearGradient>
+
+    <linearGradient id="deepBlue" x1="560" y1="350" x2="1220" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0078D8"/>
+      <stop offset="1" stop-color="#04275F"/>
+    </linearGradient>
+
+    <linearGradient id="aquaStroke" x1="680" y1="110" x2="1120" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8FCFF"/>
+      <stop offset="0.42" stop-color="#26CFFF"/>
+      <stop offset="1" stop-color="#006CD1"/>
+    </linearGradient>
+
+    <linearGradient id="wordBlue" x1="505" y1="847" x2="1295" y2="847" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00A3F5"/>
+      <stop offset="0.48" stop-color="#0067BE"/>
+      <stop offset="1" stop-color="#092A62"/>
+    </linearGradient>
+
+    <radialGradient id="lens" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 617) rotate(90) scale(78)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.28" stop-color="#50DFFF"/>
+      <stop offset="0.66" stop-color="#0073D6"/>
+      <stop offset="1" stop-color="#05275F"/>
+    </radialGradient>
+
+    <filter id="shadow" x="340" y="130" width="1120" height="730" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#002D70" flood-opacity="0.18"/>
+    </filter>
+
+    <filter id="tinyGlow" x="300" y="100" width="1200" height="760" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.0 0 0 0 0 0.55 0 0 0 0 1 0 0 0 0.18 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+
+  <rect width="1800" height="1100" fill="#FFFFFF"/>
+
+  <g filter="url(#shadow)">
+    <!-- 5G wireless waves - slightly raised -->
+    <g filter="url(#tinyGlow)" transform="translate(0 -110)">
+      <path d="M806 274C858 226 942 226 994 274" stroke="url(#aquaStroke)" stroke-width="24" stroke-linecap="round"/>
+      <path d="M842 321C878 291 922 291 958 321" stroke="url(#aquaStroke)" stroke-width="22" stroke-linecap="round"/>
+      <path d="M877 365C891 353 909 353 923 365" stroke="url(#aquaStroke)" stroke-width="19" stroke-linecap="round"/>
+    </g>
+
+    <!-- center antenna -->
+    <path d="M900 382L900 488" stroke="url(#deepBlue)" stroke-width="33" stroke-linecap="round"/>
+    <path d="M859 497C883 482 917 482 941 497" stroke="url(#deepBlue)" stroke-width="25" stroke-linecap="round"/>
+
+    <!-- drone arms -->
+    <path d="M654 499C720 461 810 442 900 442C990 442 1080 461 1146 499"
+          stroke="url(#deepBlue)" stroke-width="35" stroke-linecap="round"/>
+    <path d="M655 501L533 460" stroke="url(#deepBlue)" stroke-width="34" stroke-linecap="round"/>
+    <path d="M1145 501L1267 460" stroke="url(#deepBlue)" stroke-width="34" stroke-linecap="round"/>
+
+    <!-- main drone shell -->
+    <path d="M625 528C699 459 799 425 900 425C1001 425 1101 459 1175 528C1120 620 1020 676 900 676C780 676 680 620 625 528Z"
+          fill="url(#bodyBlue)"/>
+
+    <!-- top shine -->
+    <path d="M688 526C744 487 820 466 900 466C980 466 1056 487 1112 526C1060 568 987 591 900 591C813 591 740 568 688 526Z"
+          fill="#E4FEFF" opacity="0.76"/>
+    <path d="M707 545C760 568 825 580 900 580C975 580 1040 568 1093 545"
+          stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.62"/>
+
+    <!-- left rotor -->
+    <g>
+      <ellipse cx="503" cy="457" rx="127" ry="63" fill="none" stroke="url(#aquaStroke)" stroke-width="22"/>
+      <ellipse cx="503" cy="457" rx="86" ry="23" fill="#E1FCFF" opacity="0.9"/>
+      <ellipse cx="503" cy="457" rx="116" ry="52" fill="none" stroke="#0067C8" stroke-width="8" opacity="0.50"/>
+      <path d="M430 457C471 441 535 441 576 457" stroke="#6BE6FF" stroke-width="11" stroke-linecap="round" opacity="0.76"/>
+      <circle cx="503" cy="457" r="30" fill="url(#deepBlue)"/>
+      <circle cx="503" cy="457" r="12" fill="#B6F7FF"/>
+    </g>
+
+    <!-- right rotor -->
+    <g>
+      <ellipse cx="1297" cy="457" rx="127" ry="63" fill="none" stroke="url(#aquaStroke)" stroke-width="22"/>
+      <ellipse cx="1297" cy="457" rx="86" ry="23" fill="#E1FCFF" opacity="0.9"/>
+      <ellipse cx="1297" cy="457" rx="116" ry="52" fill="none" stroke="#0067C8" stroke-width="8" opacity="0.50"/>
+      <path d="M1224 457C1265 441 1329 441 1370 457" stroke="#6BE6FF" stroke-width="11" stroke-linecap="round" opacity="0.76"/>
+      <circle cx="1297" cy="457" r="30" fill="url(#deepBlue)"/>
+      <circle cx="1297" cy="457" r="12" fill="#B6F7FF"/>
+    </g>
+
+    <!-- lens module, no legs -->
+    <circle cx="900" cy="617" r="72" fill="#FFFFFF"/>
+    <circle cx="900" cy="617" r="56" fill="url(#lens)"/>
+    <circle cx="900" cy="617" r="35" fill="none" stroke="#EFFFFF" stroke-width="8"/>
+    <circle cx="878" cy="594" r="12" fill="#FFFFFF" opacity="0.92"/>
+  </g>
+
+  <!-- premium wordmark -->
+  <g>
+    <text x="900" y="862" text-anchor="middle"
+          font-family="Inter, Avenir Next, Montserrat, Arial, Helvetica, sans-serif"
+          font-size="132"
+          font-weight="850"
+          letter-spacing="-7"
+          fill="url(#wordBlue)">DroneCom</text>
+
+    <text x="900" y="930" text-anchor="middle"
+          font-family="Inter, Avenir Next, Montserrat, Arial, Helvetica, sans-serif"
+          font-size="30"
+          font-weight="700"
+          letter-spacing="12"
+          fill="#55708A">DRONE &amp; COMMUNICATION</text>
+
+    <text x="900" y="976" text-anchor="middle"
+          font-family="Inter, Avenir Next, Montserrat, Arial, Helvetica, sans-serif"
+          font-size="30"
+          font-weight="700"
+          letter-spacing="12"
+          fill="#55708A">CONFERENCE</text>
+  </g>
 </svg>
