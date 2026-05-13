@@ -51,7 +51,7 @@ input {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 22px;
   min-width: auto;
   padding: 0;
   background: transparent;
@@ -1169,7 +1169,7 @@ main {
   }
 
   .brand {
-    gap: 12px;
+    gap: 16px;
   }
 
   .brandLogo {
@@ -1236,7 +1236,7 @@ main {
   }
 
   .brand {
-    gap: 9px;
+    gap: 12px;
   }
 
   .brandLogo {
