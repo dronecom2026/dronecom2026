@@ -1342,3 +1342,61 @@ main {
     padding: 18px;
   }
 }
+
+
+/* =========================
+   SUBMISSION INSTRUCTIONS
+========================= */
+
+.submissionInstructions {
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  padding: 34px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 90, 200, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 45px rgba(0, 40, 120, 0.08);
+}
+
+.submissionInstructions h3 {
+  margin: 0 0 24px;
+  color: #003ea8;
+  font-size: 2rem;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+}
+
+.submissionInstructions ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.submissionInstructions li {
+  margin-bottom: 18px;
+  color: #1f2937;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  font-weight: 500;
+}
+
+.submissionInstructions li::marker {
+  color: #0057d8;
+}
+
+@media (max-width: 680px) {
+  .submissionInstructions {
+    padding: 24px;
+    border-radius: 24px;
+    margin-bottom: 36px;
+  }
+
+  .submissionInstructions h3 {
+    font-size: 1.6rem;
+  }
+
+  .submissionInstructions li {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+}
