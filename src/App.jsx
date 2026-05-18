@@ -508,6 +508,44 @@ function App() {
             </p>
           </div>
 
+          <div className="submissionInstructions">
+            <h3>Submission Instructions</h3>
+
+            <ul>
+              <li>
+                Submissions must present original and previously unpublished
+                results and should clearly describe their relationship to
+                existing work and their potential impact on future research.
+              </li>
+
+              <li>
+                Papers must be submitted in PDF format using the ACM templates
+                in standard two-column format with a 10-point font on US Letter
+                paper (8.5 × 11 inches).
+              </li>
+
+              <li>
+                Technical papers must not exceed 6 pages in total, including
+                references.
+              </li>
+
+              <li>
+                Appendix sections are allowed provided the entire submission
+                remains within the six-page limit.
+              </li>
+
+              <li>
+                Submissions must include author names and affiliations for
+                single-blind peer review by the Program Committee.
+              </li>
+
+              <li>
+                Authors of accepted papers are expected to present and discuss
+                their work at the workshop.
+              </li>
+            </ul>
+          </div>
+
           <div className="dateGrid">
             {importantDates.map((item, index) => (
               <div className="dateCard" key={item.label}>
