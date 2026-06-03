@@ -12,18 +12,18 @@ const nav = [
 
 const importantDates = [
   {
-    label: "Paper Submission",
-    date: "June 5, 2026",
+    label: "Paper Submission Deadline",
+    date: "June 26, 2026",
     note: "Submission deadline",
   },
   {
-    label: "Acceptance Notification",
-    date: "July 31, 2026",
+    label: "Notification of Acceptance",
+    date: "Aug 15, 2026",
     note: "Author notification",
   },
   {
-    label: "Camera Ready",
-    date: "August 21, 2026",
+    label: "Camera-Ready",
+    date: "Aug 31, 2026",
     note: "Final version due",
   },
   {
@@ -320,8 +320,8 @@ function App() {
 
             <div className="heroCard">
               <p>Next Deadline</p>
-              <h2>June 5, 2026</h2>
-              <span>Paper Submission</span>
+              <h2>June 26, 2026</h2>
+              <span>Paper Submission Deadline</span>
 
               <div className="miniTimeline">
                 {importantDates.map((item, index) => (
@@ -762,7 +762,7 @@ function Header({ menuOpen, setMenuOpen }) {
           src={`${import.meta.env.BASE_URL}dronecom-logo.png`}
           alt="DroneCom logo"
           className="brandLogo"
-          />
+        />
 
         <span>
           <strong>DroneCom 2026</strong>
