@@ -88,6 +88,13 @@ const tpcCoChairs = [
   },
 ];
 
+const publicityOutreachChairs = [
+  {
+    name: "Dr. Tamer Mohamed",
+    affiliation: "Canadian University Dubai, UAE",
+  },
+];
+
 const technicalProgramCommittee = [
   {
     name: "Syed Hassan Shah",
@@ -585,8 +592,8 @@ function App() {
             <h2>Workshop Committees</h2>
             <p>
               DroneCom 2026 is supported by workshop organizers, TPC co-chairs,
-              the technical program committee, and coordination contributors
-              from international institutions.
+              the technical program committee, publicity and outreach leadership,
+              and coordination contributors from international institutions.
             </p>
           </div>
 
@@ -616,6 +623,19 @@ function App() {
 
             <div className="simpleCommitteeGrid">
               {tpcCoChairs.map((person) => (
+                <div className="simpleCommitteeCard" key={person.name}>
+                  <h4>{person.name}</h4>
+                  <p>{person.affiliation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="committeeBlock">
+            <h3>Publicity &amp; Outreach Chair</h3>
+
+            <div className="simpleCommitteeGrid">
+              {publicityOutreachChairs.map((person) => (
                 <div className="simpleCommitteeCard" key={person.name}>
                   <h4>{person.name}</h4>
                   <p>{person.affiliation}</p>
@@ -762,7 +782,7 @@ function Header({ menuOpen, setMenuOpen }) {
           src={`${import.meta.env.BASE_URL}dronecom-logo.png`}
           alt="DroneCom logo"
           className="brandLogo"
-          />
+        />
 
         <span>
           <strong>DroneCom 2026</strong>
