@@ -90,7 +90,7 @@ const tpcCoChairs = [
 
 const publicityOutreachChairs = [
   {
-    name: "Dr. Tamer Mohamed",
+    name: "Tamer Mohamed",
     affiliation: "Canadian University Dubai, UAE",
   },
 ];
