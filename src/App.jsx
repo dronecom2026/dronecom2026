@@ -251,6 +251,7 @@ function App() {
   const [topicQuery, setTopicQuery] = useState("");
   const [activeProgram, setActiveProgram] = useState("All");
   const [openEdition, setOpenEdition] = useState(0);
+  const [activeSubmissionInfo, setActiveSubmissionInfo] = useState(null);
 
   const filteredTopics = useMemo(() => {
     return topics.filter((topic) =>
@@ -568,108 +569,168 @@ function App() {
             </a>
           </div>
 
-          <div className="submissionInstructions">
-            <h3>Submission Instructions</h3>
-
-            <ul>
-              <li>
-                Submissions must present original and previously unpublished
-                results and should clearly describe their relationship to
-                existing work and their potential impact on future research.
-              </li>
-
-              <li>
-                Papers must be submitted in PDF format using the ACM templates
-                in standard two-column format with a 10-point font on US Letter
-                paper (8.5 × 11 inches).
-              </li>
-
-              <li>
-                Technical papers must not exceed 6 pages in total, including
-                references.
-              </li>
-
-              <li>
-                Appendix sections are allowed provided the entire submission
-                remains within the six-page limit.
-              </li>
-
-              <li>
-                Submissions must include author names and affiliations for
-                single-blind peer review by the Program Committee.
-              </li>
-
-              <li>
-                Authors of accepted papers are expected to present and discuss
-                their work at the workshop.
-              </li>
-            </ul>
-          </div>
-
-          <div className="submissionInstructions">
-            <h3>Format Your Final Manuscript</h3>
-
-            <p>
-              Please use the latest ACM proceedings template for your final
-              manuscript. Do not manually modify the ACM template&apos;s margins,
-              column dimensions, font settings, or spacing.
-            </p>
-
-            <p>
-              <strong>For LaTeX, please use:</strong>
-            </p>
-
-            <p>
-              <code>{"\\documentclass[sigconf, 10pt]{acmart}"}</code>
-            </p>
-
-            <p>
-              The final manuscript should satisfy the DroneCom 2026 HotCRP
-              final-version requirements:
-            </p>
-
-            <ul>
-              <li>Paper size: US Letter (8.5 × 11 inches)</li>
-              <li>Two-column format</li>
-              <li>Text block: 7 × 9.25 inches</li>
-              <li>Body font: 9 +/- 0.1 pt</li>
-              <li>Line height: 11 pt</li>
-              <li>Maximum length: 6 pages</li>
-              <li>Appendix sections are allowed.</li>
-              <li>Do not number the pages of the final paper.</li>
-              <li>
-                Include the appropriate ACM Computing Classification System
-                (CCS) indexing information.
-              </li>
-              <li>Use standard, properly embedded fonts.</li>
-              <li>
-                Avoid special characters or non-standard fonts that may cause
-                problems during processing or printing.
-              </li>
-              <li>
-                Carefully check that the title and abstract in HotCRP exactly
-                match the final manuscript and do not contain LaTeX commands or
-                symbols.
-              </li>
-            </ul>
-
-            <p>
-              <strong>Important:</strong> Authors should use the ACM{" "}
-              <code>sigconf</code> template as provided and should not manually
-              change the margins or page layout. The DroneCom HotCRP PDF checker
-              will be used to verify the final manuscript.
-            </p>
-
-            <p>
-              The ACM proceedings templates are available at:{" "}
-              <a
-                href="http://www.acm.org/publications/proceedings-template"
-                target="_blank"
-                rel="noreferrer"
+          <div className="submissionAccordion">
+            <div className="submissionAccordionTabs">
+              <button
+                type="button"
+                className={
+                  activeSubmissionInfo === "instructions"
+                    ? "submissionAccordionTrigger active"
+                    : "submissionAccordionTrigger"
+                }
+                onClick={() =>
+                  setActiveSubmissionInfo(
+                    activeSubmissionInfo === "instructions"
+                      ? null
+                      : "instructions"
+                  )
+                }
+                aria-expanded={activeSubmissionInfo === "instructions"}
+                aria-controls="submission-instructions-panel"
               >
-                ACM Proceedings Template
-              </a>
-            </p>
+                <span>
+                  <small>Author Guidelines</small>
+                  <strong>Submission Instructions</strong>
+                </span>
+                <b>{activeSubmissionInfo === "instructions" ? "−" : "+"}</b>
+              </button>
+
+              <button
+                type="button"
+                className={
+                  activeSubmissionInfo === "manuscript"
+                    ? "submissionAccordionTrigger active"
+                    : "submissionAccordionTrigger"
+                }
+                onClick={() =>
+                  setActiveSubmissionInfo(
+                    activeSubmissionInfo === "manuscript" ? null : "manuscript"
+                  )
+                }
+                aria-expanded={activeSubmissionInfo === "manuscript"}
+                aria-controls="final-manuscript-panel"
+              >
+                <span>
+                  <small>Camera-Ready Guidelines</small>
+                  <strong>Format Your Final Manuscript</strong>
+                </span>
+                <b>{activeSubmissionInfo === "manuscript" ? "−" : "+"}</b>
+              </button>
+            </div>
+
+            {activeSubmissionInfo === "instructions" && (
+              <div
+                id="submission-instructions-panel"
+                className="submissionAccordionContent"
+              >
+                <h3>Submission Instructions</h3>
+
+                <ul>
+                  <li>
+                    Submissions must present original and previously unpublished
+                    results and should clearly describe their relationship to
+                    existing work and their potential impact on future research.
+                  </li>
+
+                  <li>
+                    Papers must be submitted in PDF format using the ACM templates
+                    in standard two-column format with a 10-point font on US Letter
+                    paper (8.5 × 11 inches).
+                  </li>
+
+                  <li>
+                    Technical papers must not exceed 6 pages in total, including
+                    references.
+                  </li>
+
+                  <li>
+                    Appendix sections are allowed provided the entire submission
+                    remains within the six-page limit.
+                  </li>
+
+                  <li>
+                    Submissions must include author names and affiliations for
+                    single-blind peer review by the Program Committee.
+                  </li>
+
+                  <li>
+                    Authors of accepted papers are expected to present and discuss
+                    their work at the workshop.
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {activeSubmissionInfo === "manuscript" && (
+              <div
+                id="final-manuscript-panel"
+                className="submissionAccordionContent"
+              >
+                <h3>Format Your Final Manuscript</h3>
+
+                <p>
+                  Please use the latest ACM proceedings template for your final
+                  manuscript. Do not manually modify the ACM template&apos;s margins,
+                  column dimensions, font settings, or spacing.
+                </p>
+
+                <p>
+                  <strong>For LaTeX, please use:</strong>
+                </p>
+
+                <p className="latexCommand">
+                  <code>{"\\documentclass[sigconf, 10pt]{acmart}"}</code>
+                </p>
+
+                <p>
+                  The final manuscript should satisfy the DroneCom 2026 HotCRP
+                  final-version requirements:
+                </p>
+
+                <ul>
+                  <li>Paper size: US Letter (8.5 × 11 inches)</li>
+                  <li>Two-column format</li>
+                  <li>Text block: 7 × 9.25 inches</li>
+                  <li>Body font: 9 +/- 0.1 pt</li>
+                  <li>Line height: 11 pt</li>
+                  <li>Maximum length: 6 pages</li>
+                  <li>Appendix sections are allowed.</li>
+                  <li>Do not number the pages of the final paper.</li>
+                  <li>
+                    Include the appropriate ACM Computing Classification System
+                    (CCS) indexing information.
+                  </li>
+                  <li>Use standard, properly embedded fonts.</li>
+                  <li>
+                    Avoid special characters or non-standard fonts that may cause
+                    problems during processing or printing.
+                  </li>
+                  <li>
+                    Carefully check that the title and abstract in HotCRP exactly
+                    match the final manuscript and do not contain LaTeX commands or
+                    symbols.
+                  </li>
+                </ul>
+
+                <p>
+                  <strong>Important:</strong> Authors should use the ACM{" "}
+                  <code>sigconf</code> template as provided and should not manually
+                  change the margins or page layout. The DroneCom HotCRP PDF checker
+                  will be used to verify the final manuscript.
+                </p>
+
+                <p>
+                  The ACM proceedings templates are available at:{" "}
+                  <a
+                    href="http://www.acm.org/publications/proceedings-template"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    ACM Proceedings Template
+                  </a>
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="dateGrid">
