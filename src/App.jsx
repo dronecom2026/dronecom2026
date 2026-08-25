@@ -13,7 +13,7 @@ const nav = [
 const importantDates = [
   {
     label: "Paper Submission",
-    date: "Aug 30, 2026",
+    date: "June 26, 2026",
     note: "Submission deadline",
   },
   {
@@ -23,7 +23,7 @@ const importantDates = [
   },
   {
     label: "Camera Ready",
-    date: "Aug 31, 2026",
+    date: "Aug 30, 2026",
     note: "Final version due",
   },
   {
@@ -375,7 +375,7 @@ function App() {
             <div className="heroCard">
               <p>Next Deadline</p>
               <h2>Aug 30, 2026</h2>
-              <span>Paper Submission</span>
+              <span>Camera Ready</span>
 
               <div className="miniTimeline">
                 {importantDates.map((item, index) => (
