@@ -13,7 +13,7 @@ const nav = [
 const importantDates = [
   {
     label: "Paper Submission",
-    date: "June 26, 2026",
+    date: "Aug 30, 2026",
     note: "Submission deadline",
   },
   {
@@ -327,7 +327,7 @@ function App() {
 
             <div className="heroCard">
               <p>Next Deadline</p>
-              <h2>June 26, 2026</h2>
+              <h2>Aug 30, 2026</h2>
               <span>Paper Submission</span>
 
               <div className="miniTimeline">
@@ -515,6 +515,59 @@ function App() {
             </p>
           </div>
 
+          <div className="submissionPanel">
+            <div>
+              <p className="eyebrow light">Important ACM Open Access Update</p>
+              <h3>ACM Open Access Publishing Model for 2026</h3>
+
+              <p>
+                Starting January 1, 2026, ACM will fully transition to Open
+                Access. All ACM publications, including those from ACM-sponsored
+                conferences, will be 100% Open Access.
+              </p>
+
+              <p>
+                Authors will have two primary options for publishing Open Access
+                articles with ACM: the ACM Open institutional model or payment
+                of an Article Processing Charge (APC). With more than 2,600
+                institutions already participating in ACM Open, the majority of
+                ACM-sponsored conference papers will not require APCs from
+                authors or conferences; currently, approximately 76% fall into
+                this category.
+              </p>
+
+              <p>
+                Authors from institutions that do not participate in ACM Open
+                will need to pay an APC unless they qualify for a financial
+                waiver. Waivers are rare and are granted according to specific
+                ACM criteria.
+              </p>
+
+              <p>
+                To ease the transition in 2026, ACM has approved a temporary
+                subsidy:
+              </p>
+
+              <ul>
+                <li>
+                  <strong>$250 APC</strong> for ACM/SIG members
+                </li>
+                <li>
+                  <strong>$350 APC</strong> for non-members
+                </li>
+              </ul>
+            </div>
+
+            <a
+              className="submitButton"
+              href="https://www.acm.org/publications/policies/policy-on-discretionary-open-access-apc-waivers"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Review ACM APC Waiver Policy
+            </a>
+          </div>
+
           <div className="submissionInstructions">
             <h3>Submission Instructions</h3>
 
@@ -551,6 +604,72 @@ function App() {
                 their work at the workshop.
               </li>
             </ul>
+          </div>
+
+          <div className="submissionInstructions">
+            <h3>Format Your Final Manuscript</h3>
+
+            <p>
+              Please use the latest ACM proceedings template for your final
+              manuscript. Do not manually modify the ACM template&apos;s margins,
+              column dimensions, font settings, or spacing.
+            </p>
+
+            <p>
+              <strong>For LaTeX, please use:</strong>
+            </p>
+
+            <p>
+              <code>{"\\documentclass[sigconf, 10pt]{acmart}"}</code>
+            </p>
+
+            <p>
+              The final manuscript should satisfy the DroneCom 2026 HotCRP
+              final-version requirements:
+            </p>
+
+            <ul>
+              <li>Paper size: US Letter (8.5 × 11 inches)</li>
+              <li>Two-column format</li>
+              <li>Text block: 7 × 9.25 inches</li>
+              <li>Body font: 9 +/- 0.1 pt</li>
+              <li>Line height: 11 pt</li>
+              <li>Maximum length: 6 pages</li>
+              <li>Appendix sections are allowed.</li>
+              <li>Do not number the pages of the final paper.</li>
+              <li>
+                Include the appropriate ACM Computing Classification System
+                (CCS) indexing information.
+              </li>
+              <li>Use standard, properly embedded fonts.</li>
+              <li>
+                Avoid special characters or non-standard fonts that may cause
+                problems during processing or printing.
+              </li>
+              <li>
+                Carefully check that the title and abstract in HotCRP exactly
+                match the final manuscript and do not contain LaTeX commands or
+                symbols.
+              </li>
+            </ul>
+
+            <p>
+              <strong>Important:</strong> Authors should use the ACM{" "}
+              <code>sigconf</code> template as provided and should not manually
+              change the margins or page layout. The DroneCom HotCRP PDF checker
+              will be used to verify the final manuscript.
+            </p>
+
+            <p>
+              The ACM proceedings templates are available at:{" "}
+              <a
+                href="http://www.acm.org/publications/proceedings-template"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ACM Proceedings Template
+              </a>
+            </p>
           </div>
 
           <div className="dateGrid">
