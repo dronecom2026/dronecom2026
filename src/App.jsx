@@ -277,6 +277,42 @@ function App() {
     <div className="site">
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
+
+      <style>{`
+        .openAccessBanner > div {
+          min-width: 0;
+        }
+
+        .openAccessBanner h3 {
+          margin-bottom: 22px;
+        }
+
+        .openAccessBanner p:not(.eyebrow) {
+          margin: 0 0 18px;
+          line-height: 1.72;
+          text-align: justify;
+          text-justify: inter-word;
+          hyphens: auto;
+        }
+
+        .openAccessBanner ul {
+          margin: 6px 0 0;
+          padding-left: 28px;
+          line-height: 1.65;
+        }
+
+        .openAccessBanner li + li {
+          margin-top: 3px;
+        }
+
+        @media (max-width: 760px) {
+          .openAccessBanner p:not(.eyebrow) {
+            text-align: left;
+            hyphens: none;
+          }
+        }
+      `}</style>
+
       <main>
         <section id="home" className="hero">
           <div className="heroBg">
@@ -317,9 +353,19 @@ function App() {
               </div>
 
               <div className="heroActions">
-                <a href="#cfp" className="primaryBtn">
+                <a
+                  href="https://www.sigmobile.org/mobicom/2026/registration.html"
+                  className="primaryBtn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Register Now
+                </a>
+
+                <a href="#cfp" className="secondaryBtn">
                   View Call for Papers
                 </a>
+
                 <a href="#submission" className="secondaryBtn">
                   Submission Details
                 </a>
@@ -516,7 +562,7 @@ function App() {
             </p>
           </div>
 
-          <div className="submissionPanel">
+          <div className="submissionPanel openAccessBanner">
             <div>
               <p className="eyebrow light">Important ACM Open Access Update</p>
               <h3>ACM Open Access Publishing Model for 2026</h3>
