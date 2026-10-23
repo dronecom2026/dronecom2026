@@ -375,6 +375,8 @@ function App() {
   const [activeScope, setActiveScope] = useState("motivation");
   const [topicQuery, setTopicQuery] = useState("");
   const [activeProgram, setActiveProgram] = useState("All");
+  const [expandedProgramSessions, setExpandedProgramSessions] = useState({});
+  const [showProgramPosters, setShowProgramPosters] = useState(false);
   const [openEdition, setOpenEdition] = useState(0);
   const [activeSubmissionInfo, setActiveSubmissionInfo] = useState(null);
 
@@ -440,155 +442,6 @@ function App() {
           }
         }
 
-        .programMetaCard {
-          max-width: 1100px;
-          margin: 0 auto 30px;
-          padding: 22px 24px;
-          border: 1px solid #dbe5f0;
-          border-radius: 24px;
-          background: white;
-          box-shadow: 0 14px 36px rgba(26, 47, 70, 0.08);
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 18px;
-        }
-
-        .programMetaCard div {
-          min-width: 0;
-        }
-
-        .programMetaCard small {
-          display: block;
-          margin-bottom: 5px;
-          color: #64748b;
-          font-size: 12px;
-          font-weight: 900;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-        }
-
-        .programMetaCard strong {
-          display: block;
-          color: #0b1f39;
-          font-size: 16px;
-          line-height: 1.45;
-        }
-
-        .programDetailedItem {
-          align-items: flex-start;
-        }
-
-        .programDetailedItem > div:nth-child(2) {
-          min-width: 0;
-        }
-
-        .programTypeBadge {
-          display: inline-flex;
-          align-items: center;
-          margin-bottom: 7px;
-          padding: 5px 9px;
-          border-radius: 999px;
-          background: #eaf4ff;
-          color: #0057b8;
-          font-size: 11px;
-          font-weight: 900;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-        }
-
-        .programDetails {
-          margin-top: 5px !important;
-          color: #64748b !important;
-        }
-
-        .programPapers {
-          margin-top: 18px;
-          display: grid;
-          gap: 12px;
-        }
-
-        .programPaper {
-          padding: 14px 16px;
-          border: 1px solid #dfe8f2;
-          border-radius: 16px;
-          background: #f8fbff;
-        }
-
-        .programPaper h4 {
-          margin: 0;
-          color: #10213a;
-          font-size: 15px;
-          line-height: 1.42;
-        }
-
-        .programPaper p {
-          margin: 7px 0 0 !important;
-          color: #5f6f84 !important;
-          font-size: 13px;
-          line-height: 1.55;
-        }
-
-        .posterProgramBlock {
-          max-width: 1100px;
-          margin: 38px auto 0;
-          padding: 28px;
-          border-radius: 26px;
-          background: linear-gradient(135deg, #082a55, #0b5fc1);
-          color: white;
-        }
-
-        .posterProgramBlock .eyebrow {
-          color: #9ee7ff;
-        }
-
-        .posterProgramBlock h3 {
-          margin: 0 0 8px;
-          font-size: 28px;
-        }
-
-        .posterProgramBlock > p {
-          margin: 0 0 20px;
-          color: #dceeff;
-        }
-
-        .posterProgramGrid {
-          display: grid;
-          gap: 12px;
-        }
-
-        .posterProgramCard {
-          padding: 16px 18px;
-          border-radius: 17px;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.16);
-        }
-
-        .posterProgramCard h4 {
-          margin: 0;
-          font-size: 15px;
-          line-height: 1.45;
-        }
-
-        .posterProgramCard p {
-          margin: 8px 0 0;
-          color: #dceeff;
-          font-size: 13px;
-          line-height: 1.55;
-        }
-
-        @media (max-width: 760px) {
-          .programMetaCard {
-            grid-template-columns: 1fr;
-          }
-
-          .programDetailedItem {
-            grid-template-columns: 1fr !important;
-          }
-
-          .programDetailedItem > span {
-            justify-self: start;
-          }
-        }
       `}</style>
 
       <main>
@@ -1175,103 +1028,167 @@ function App() {
           </div>
         </section>
 
-        <section id="program" className="section alt">
-          <div className="sectionHeader center">
-            <p className="eyebrow">Program</p>
-            <h2>DroneCom 2026 Workshop Program</h2>
-            <p>
-              Friday, October 30, 2026 · Full-day workshop at ACM MobiCom 2026
-              in Austin, Texas.
-            </p>
-          </div>
-
-          <div className="programMetaCard">
-            <div>
-              <small>Date</small>
-              <strong>Friday, October 30, 2026</strong>
-            </div>
-
-            <div>
-              <small>Format</small>
-              <strong>Full Day · 08:30–17:10</strong>
-            </div>
-
-            <div>
-              <small>Venue</small>
-              <strong>
-                Level 3, Texas Governor&apos;s Room 3.116, Texas Union Building,
-                Austin, Texas
-              </strong>
-            </div>
-          </div>
-
-          <div className="programControls">
-            {["All", "Morning", "Afternoon"].map((item) => (
-              <button
-                key={item}
-                className={activeProgram === item ? "active" : ""}
-                onClick={() => setActiveProgram(item)}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-
-          <div className="programList">
-            {filteredProgram.map((item) => (
-              <div
-                className="programItem programDetailedItem"
-                key={`${item.time}-${item.title}`}
-              >
-                <div className="programTime">{item.time}</div>
-
-                <div>
-                  <span className="programTypeBadge">{item.type}</span>
-
-                  <h3>{item.title}</h3>
-
-                  <p className="programDetails">{item.details}</p>
-
-                  {item.papers && (
-                    <div className="programPapers">
-                      {item.papers.map((paper) => (
-                        <article className="programPaper" key={paper.title}>
-                          <h4>{paper.title}</h4>
-                          <p>{paper.authors}</p>
-                        </article>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <span>
-                  {item.papers
-                    ? `${item.papers.length} papers`
-                    : item.type === "Keynote"
-                    ? "TBD"
-                    : item.type}
-                </span>
+        <section id="program" className="section alt programSection">
+          <div className="programShell">
+            <div className="programHeadingRow">
+              <div className="programHeadingCopy">
+                <p className="eyebrow">Official Workshop Schedule</p>
+                <h2>Workshop Program</h2>
+                <p>
+                  DroneCom 2026 · Friday, October 30, 2026 · Austin, Texas
+                </p>
               </div>
-            ))}
-          </div>
+              <div className="programCount" aria-label="Program overview">
+                <strong>4</strong> technical sessions
+                <span aria-hidden="true">•</span>
+                <strong>12</strong> papers
+                <span aria-hidden="true">•</span>
+                <strong>3</strong> posters
+              </div>
+            </div>
 
-          <div className="posterProgramBlock">
-            <p className="eyebrow">Poster Presentations</p>
+            <div className="programFacts" aria-label="Workshop event information">
+              <div className="programFact">
+                <span>Date</span>
+                <strong>Friday, October 30, 2026</strong>
+              </div>
+              <div className="programFact">
+                <span>Time</span>
+                <strong>08:30 – 17:10</strong>
+              </div>
+              <div className="programFact programFactVenue">
+                <span>Venue</span>
+                <strong>
+                  Texas Governor&apos;s Room 3.116 · Level 3 · Texas Union Building,
+                  Austin, Texas
+                </strong>
+              </div>
+            </div>
 
-            <h3>Posters on display during coffee breaks and lunch</h3>
+            <div className="programToolbar">
+              <div className="programToolbarTitle">
+                <h3>Day agenda</h3>
+                <p>Tap a technical session to view its papers and authors.</p>
+              </div>
+              <div className="programControls" role="group" aria-label="Filter workshop schedule">
+                {["All", "Morning", "Afternoon"].map((item) => (
+                  <button
+                    type="button"
+                    key={item}
+                    className={activeProgram === item ? "active" : ""}
+                    aria-pressed={activeProgram === item}
+                    onClick={() => setActiveProgram(item)}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-            <p>
-              Poster presentations will remain available during the scheduled
-              coffee breaks and lunch period.
-            </p>
+            <div className="programAgendaList">
+              {filteredProgram.map((item) => {
+                const hasPapers = Boolean(item.papers?.length);
+                const expanded = Boolean(expandedProgramSessions[item.title]);
+                const [startTime, endTime] = item.time.split("–");
+                const isBreak = item.type === "Break";
+                return (
+                  <article
+                    key={`${item.time}-${item.title}`}
+                    className={`programAgendaRow${isBreak ? " programAgendaRowBreak" : ""}${hasPapers ? " programAgendaRowSession" : ""}`}
+                  >
+                    <div className="programAgendaTime">
+                      <strong>{startTime}</strong>
+                      <span>{endTime}</span>
+                    </div>
 
-            <div className="posterProgramGrid">
-              {posterPresentations.map((poster) => (
-                <article className="posterProgramCard" key={poster.title}>
-                  <h4>{poster.title}</h4>
-                  <p>{poster.authors}</p>
-                </article>
-              ))}
+                    <div className="programAgendaBody">
+                      {hasPapers ? (
+                        <>
+                          <button
+                            type="button"
+                            className="programSessionToggle"
+                            aria-expanded={expanded}
+                            aria-controls={`program-papers-${programItems.indexOf(item)}`}
+                            onClick={() =>
+                              setExpandedProgramSessions((current) => ({
+                                ...current,
+                                [item.title]: !current[item.title],
+                              }))
+                            }
+                          >
+                            <span className="programSessionIdentity">
+                              <small className="programAgendaType">{item.type}</small>
+                              <strong>{item.title}</strong>
+                              <span>{item.details}</span>
+                            </span>
+                            <span className="programSessionAction">
+                              {expanded ? "Hide papers" : `View ${item.papers.length} papers`}
+                              <span className={expanded ? "programChevron expanded" : "programChevron"} aria-hidden="true">⌄</span>
+                            </span>
+                          </button>
+                          {expanded && (
+                            <div
+                              id={`program-papers-${programItems.indexOf(item)}`}
+                              className="programPaperGrid"
+                            >
+                              {item.papers.map((paper, index) => (
+                                <article className="programPaperCard" key={paper.title}>
+                                  <span className="programPaperNumber">{String(index + 1).padStart(2, "0")}</span>
+                                  <div>
+                                    <h4>{paper.title}</h4>
+                                    <p>{paper.authors}</p>
+                                  </div>
+                                </article>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="programAgendaBasic">
+                          <div>
+                            <small className="programAgendaType">{item.type}</small>
+                            <h3>{item.title}</h3>
+                            <p>{item.details}</p>
+                          </div>
+                          {item.type === "Keynote" && (
+                            <span className="programKeynoteNote">Speaker to be announced</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="programPosterSection">
+              <button
+                type="button"
+                className="programPosterToggle"
+                onClick={() => setShowProgramPosters((current) => !current)}
+                aria-expanded={showProgramPosters}
+                aria-controls="program-poster-list"
+              >
+                <span className="programPosterToggleCopy">
+                  <small>Poster presentations</small>
+                  <strong>3 posters on display during coffee breaks and lunch</strong>
+                </span>
+                <span className="programSessionAction">
+                  {showProgramPosters ? "Hide posters" : "View posters"}
+                  <span className={showProgramPosters ? "programChevron expanded" : "programChevron"} aria-hidden="true">⌄</span>
+                </span>
+              </button>
+              {showProgramPosters && (
+                <div id="program-poster-list" className="programPosterGrid">
+                  {posterPresentations.map((poster, index) => (
+                    <article className="programPosterCard" key={poster.title}>
+                      <small>Poster {String(index + 1).padStart(2, "0")}</small>
+                      <h4>{poster.title}</h4>
+                      <p>{poster.authors}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
