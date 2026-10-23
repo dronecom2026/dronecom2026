@@ -1038,12 +1038,23 @@ function App() {
                   DroneCom 2026 · Friday, October 30, 2026 · Austin, Texas
                 </p>
               </div>
-              <div className="programCount" aria-label="Program overview">
-                <strong>4</strong> technical sessions
-                <span aria-hidden="true">•</span>
-                <strong>12</strong> papers
-                <span aria-hidden="true">•</span>
-                <strong>3</strong> posters
+              <div className="programHeaderActions">
+                <div className="programCount" aria-label="Program overview">
+                  <strong>4</strong> technical sessions
+                  <span aria-hidden="true">•</span>
+                  <strong>12</strong> papers
+                  <span aria-hidden="true">•</span>
+                  <strong>3</strong> posters
+                </div>
+                <a
+                  className="programDownloadButton"
+                  href={`${import.meta.env.BASE_URL}DroneCom_2026_Full_Program.pdf`}
+                  download="DroneCom_2026_Full_Program.pdf"
+                  aria-label="Download the complete DroneCom 2026 workshop agenda as a PDF"
+                >
+                  <span className="programDownloadIcon" aria-hidden="true">↓</span>
+                  Download Full Program (PDF)
+                </a>
               </div>
             </div>
 
