@@ -202,46 +202,171 @@ const previousEditions = [
 
 const programItems = [
   {
-    time: "09:00",
-    title: "Opening Remarks",
-    speaker: "Workshop Organizers",
-    status: "Planned",
+    time: "08:30–08:45",
+    title: "Welcome and Opening Remarks",
+    type: "Opening",
+    details: "Workshop Organizers",
   },
   {
-    time: "09:30",
-    title: "Technical Session I",
-    speaker: "Accepted papers",
-    status: "TBA",
+    time: "08:45–09:45",
+    title: "Keynote 1",
+    type: "Keynote",
+    details: "Speaker TBD",
   },
   {
-    time: "11:00",
-    title: "Invited Talk / Keynote",
-    speaker: "Speaker to be announced",
-    status: "TBA",
+    time: "09:45–10:15",
+    title: "Coffee and Networking",
+    type: "Break",
+    details: "Networking break",
   },
   {
-    time: "12:00",
-    title: "Lunch Break",
-    speaker: "Conference schedule",
-    status: "Planned",
+    time: "10:15–11:15",
+    title: "Session 1: Drone Security and Attack Detection",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "Attention-Guided UAV Intrusion Detection with BSO-Based Feature Selection",
+        authors:
+          "Akshat Gaurav (Asia University); Varsha Arya (Hong Kong Metropolitan University); Ching-Hsien Hsu (Asia University); Kwok Tai Chui (Hong Kong Metropolitan University); Brij B. Gupta (Asia University)",
+      },
+      {
+        title:
+          "PDT-TCN: Prefix-Drop Temporal Convolutional Networks for Early Attack Detection in UAV-GCS Communications",
+        authors:
+          "Jakub Siłka, Michał Wieczorek, Marcin Woźniak (Silesian University of Technology)",
+      },
+      {
+        title:
+          "GNSS-Spoofing-Resilient Drone-Assisted 5G Backhaul via Cooperative Detection and Adaptive Link Reconfiguration",
+        authors:
+          "Abima Obim Abima, Ali Kashif Bashir, Sara Holm, Muhammad Atif Ur Rehman (Manchester Metropolitan University); MD. Israfil Biswas (University of Bedfordshire); Alex Akinbi (Manchester Metropolitan University)",
+      },
+    ],
   },
   {
-    time: "13:30",
-    title: "Technical Session II",
-    speaker: "Accepted papers",
-    status: "TBA",
+    time: "11:15–12:15",
+    title: "Session 2: Trust, Authentication and Resilient Drone Control",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "Measuring the Safety of Drone Command-and-Control under Link Degradation",
+        authors:
+          "Hannaneh B. Pasandi (UC Berkeley); Mohammad Sepahi (Old Dominion University, Rivian Inc.)",
+      },
+      {
+        title:
+          "Post-Quantum Safe Isogeny-Based Authenticated Key Establishment Protocol for Drones-Assisted 6G-Enabled Smart City Environments",
+        authors:
+          "Debnath Ghosh (International Institute of Information Technology, Hyderabad); Basudeb Bera (National University of Singapore); Ashok Kumar Das (International Institute of Information Technology, Hyderabad); Biplab Sikdar (National University of Singapore)",
+      },
+      {
+        title:
+          "Multi-Factor Trust and Access Control in Drone-Assisted Edge Networks",
+        authors:
+          "Deepak Puthal (UAE University); Raja Jayaraman (New Mexico State University); Venkata Prasanth Yanambaka (Texas Woman's University); Pradip Kumar Sharma (University of Aberdeen)",
+      },
+    ],
   },
   {
-    time: "15:30",
-    title: "Panel Discussion",
-    speaker: "Researchers and practitioners",
-    status: "TBA",
+    time: "12:15–13:30",
+    title: "Lunch and Networking",
+    type: "Break",
+    details: "Lunch boxes at Cactus Cafe, Level 2",
   },
   {
-    time: "16:30",
+    time: "13:30–14:30",
+    title: "Keynote 2",
+    type: "Keynote",
+    details: "Speaker TBD",
+  },
+  {
+    time: "14:30–15:30",
+    title: "Session 3: UAV-Enabled Edge Computing and Resource Allocation",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "RAVEN: Reverse Auction-Based Resource Allocation for UAV-Enabled Edge Computing",
+        authors:
+          "Ayan Mondal, Mir Razee M., Vansh Kathnawal, Karri Trived (Indian Institute of Technology Indore)",
+      },
+      {
+        title:
+          "UAV-Assisted Resource Optimization for Priority-Aware and Trustworthy Services",
+        authors:
+          "Muhammad Omair Butt (Lakehead University); Muhammad Naeem (COMSATS University); Waleed Ejaz (Lakehead University)",
+      },
+      {
+        title:
+          "Stability-Oriented Multi-Objective Container Scheduling for UAV-Assisted Edge Networks via TD3",
+        authors:
+          "Shabir Ahmad (Gachon University); Fahim Ullah Khan, Ibrar Ali Shah (UET Mardan); Abdul Aziz Barnawi, Muhammad Shahid Anwar (King Fahd University of Petroleum and Minerals)",
+      },
+    ],
+  },
+  {
+    time: "15:30–16:00",
+    title: "Coffee and Networking",
+    type: "Break",
+    details: "Networking break",
+  },
+  {
+    time: "16:00–17:00",
+    title: "Session 4: Learning-Driven Aerial and Non-Terrestrial Networks",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "Quantum Deep Reinforcement Learning On-the-Fly: An Energy Efficient Scheme for Autonomous Aerial Vehicles",
+        authors:
+          "Anushka Nehra (Thapar University Patiala); Neeraj Joshi (Bennett University); Rajat Chaudhary (Marwadi University); Isaac Woungang (Toronto Metropolitan University)",
+      },
+      {
+        title:
+          "Joint Trajectory and Resource Optimization for Dual Aerial ARIS-assisted NOMA-ITNTN",
+        authors:
+          "Vangara Saiprudhvi (Vellore Institute of Technology); Keshav Singh (National Sun Yat-sen University); Hariharan Subramaniyam (Vellore Institute of Technology); Chih-Peng Li (National Sun Yat-sen University)",
+      },
+      {
+        title:
+          "Adaptive Multi-Band Hybrid RF/FSO Backhaul Optimization for Non-Terrestrial Networks Using Deep Reinforcement Learning",
+        authors:
+          "Muhammad Abubakar Rashid, Muhammad Hannan Akram, Wassi Haider Kabir (National University of Sciences and Technology); Haejoon Jung (Kyung Hee University); Syed Ali Hassan (National University of Sciences and Technology)",
+      },
+    ],
+  },
+  {
+    time: "17:00–17:10",
     title: "Closing Remarks",
-    speaker: "Workshop Organizers",
-    status: "Planned",
+    type: "Closing",
+    details: "Workshop Organizers",
+  },
+];
+
+const posterPresentations = [
+  {
+    title:
+      "CMA-FL: Cognitive Multi-Agent Federated Learning for Resource-Aware Drone Communication Attack Detection",
+    authors:
+      "Pronaya Bhattacharya (Amity University); Somnath Bera (Maulana Abul Kalam Azad University of Technology, West Bengal); Anwesha Mukherjee (Mahishadal Raj College); Debashis De (Maulana Abul Kalam Azad University of Technology, West Bengal); Kwok Tai Chui (Hong Kong Metropolitan University); Brij B. Gupta (Asia University); Thippa Reddy Gadekallu (Zhejiang A&F University)",
+  },
+  {
+    title:
+      "Secrecy Rate Analysis of RIS-Assisted UAV Networks Using DDQN Network",
+    authors:
+      "Laxmi, Vipul Dixit, Ishan Budhiraja (Bennett University); Swati Kumari (Deakin University); Neeraj Kumar (Thapar University Patiala)",
+  },
+  {
+    title:
+      "Distributed Deep Learning-Based CQI Prediction for UAV-Assisted URLLC V2X Networks",
+    authors:
+      "Muhammed Mufeed M, Sneha S, Suresh Chavhan (Indian Institute of Science Education and Research, Thiruvananthapuram)",
   },
 ];
 
@@ -262,12 +387,15 @@ function App() {
   const filteredProgram = useMemo(() => {
     if (activeProgram === "All") return programItems;
 
+    const startHour = (item) =>
+      Number(item.time.split("–")[0].split(":")[0]);
+
     if (activeProgram === "Morning") {
-      return programItems.filter((item) => Number(item.time.split(":")[0]) < 12);
+      return programItems.filter((item) => startHour(item) < 12);
     }
 
     if (activeProgram === "Afternoon") {
-      return programItems.filter((item) => Number(item.time.split(":")[0]) >= 12);
+      return programItems.filter((item) => startHour(item) >= 12);
     }
 
     return programItems;
@@ -309,6 +437,156 @@ function App() {
           .openAccessBanner p:not(.eyebrow) {
             text-align: left;
             hyphens: none;
+          }
+        }
+
+        .programMetaCard {
+          max-width: 1100px;
+          margin: 0 auto 30px;
+          padding: 22px 24px;
+          border: 1px solid #dbe5f0;
+          border-radius: 24px;
+          background: white;
+          box-shadow: 0 14px 36px rgba(26, 47, 70, 0.08);
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 18px;
+        }
+
+        .programMetaCard div {
+          min-width: 0;
+        }
+
+        .programMetaCard small {
+          display: block;
+          margin-bottom: 5px;
+          color: #64748b;
+          font-size: 12px;
+          font-weight: 900;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .programMetaCard strong {
+          display: block;
+          color: #0b1f39;
+          font-size: 16px;
+          line-height: 1.45;
+        }
+
+        .programDetailedItem {
+          align-items: flex-start;
+        }
+
+        .programDetailedItem > div:nth-child(2) {
+          min-width: 0;
+        }
+
+        .programTypeBadge {
+          display: inline-flex;
+          align-items: center;
+          margin-bottom: 7px;
+          padding: 5px 9px;
+          border-radius: 999px;
+          background: #eaf4ff;
+          color: #0057b8;
+          font-size: 11px;
+          font-weight: 900;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        .programDetails {
+          margin-top: 5px !important;
+          color: #64748b !important;
+        }
+
+        .programPapers {
+          margin-top: 18px;
+          display: grid;
+          gap: 12px;
+        }
+
+        .programPaper {
+          padding: 14px 16px;
+          border: 1px solid #dfe8f2;
+          border-radius: 16px;
+          background: #f8fbff;
+        }
+
+        .programPaper h4 {
+          margin: 0;
+          color: #10213a;
+          font-size: 15px;
+          line-height: 1.42;
+        }
+
+        .programPaper p {
+          margin: 7px 0 0 !important;
+          color: #5f6f84 !important;
+          font-size: 13px;
+          line-height: 1.55;
+        }
+
+        .posterProgramBlock {
+          max-width: 1100px;
+          margin: 38px auto 0;
+          padding: 28px;
+          border-radius: 26px;
+          background: linear-gradient(135deg, #082a55, #0b5fc1);
+          color: white;
+        }
+
+        .posterProgramBlock .eyebrow {
+          color: #9ee7ff;
+        }
+
+        .posterProgramBlock h3 {
+          margin: 0 0 8px;
+          font-size: 28px;
+        }
+
+        .posterProgramBlock > p {
+          margin: 0 0 20px;
+          color: #dceeff;
+        }
+
+        .posterProgramGrid {
+          display: grid;
+          gap: 12px;
+        }
+
+        .posterProgramCard {
+          padding: 16px 18px;
+          border-radius: 17px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .posterProgramCard h4 {
+          margin: 0;
+          font-size: 15px;
+          line-height: 1.45;
+        }
+
+        .posterProgramCard p {
+          margin: 8px 0 0;
+          color: #dceeff;
+          font-size: 13px;
+          line-height: 1.55;
+        }
+
+        @media (max-width: 760px) {
+          .programMetaCard {
+            grid-template-columns: 1fr;
+          }
+
+          .programDetailedItem {
+            grid-template-columns: 1fr !important;
+          }
+
+          .programDetailedItem > span {
+            justify-self: start;
           }
         }
       `}</style>
@@ -900,11 +1178,31 @@ function App() {
         <section id="program" className="section alt">
           <div className="sectionHeader center">
             <p className="eyebrow">Program</p>
-            <h2>Workshop Program</h2>
+            <h2>DroneCom 2026 Workshop Program</h2>
             <p>
-              The detailed program will be announced after paper acceptance and
-              camera-ready submission.
+              Friday, October 30, 2026 · Full-day workshop at ACM MobiCom 2026
+              in Austin, Texas.
             </p>
+          </div>
+
+          <div className="programMetaCard">
+            <div>
+              <small>Date</small>
+              <strong>Friday, October 30, 2026</strong>
+            </div>
+
+            <div>
+              <small>Format</small>
+              <strong>Full Day · 08:30–17:10</strong>
+            </div>
+
+            <div>
+              <small>Venue</small>
+              <strong>
+                Level 3, Texas Governor&apos;s Room 3.116, Texas Union Building,
+                Austin, Texas
+              </strong>
+            </div>
           </div>
 
           <div className="programControls">
@@ -921,17 +1219,60 @@ function App() {
 
           <div className="programList">
             {filteredProgram.map((item) => (
-              <div className="programItem" key={`${item.time}-${item.title}`}>
+              <div
+                className="programItem programDetailedItem"
+                key={`${item.time}-${item.title}`}
+              >
                 <div className="programTime">{item.time}</div>
 
                 <div>
+                  <span className="programTypeBadge">{item.type}</span>
+
                   <h3>{item.title}</h3>
-                  <p>{item.speaker}</p>
+
+                  <p className="programDetails">{item.details}</p>
+
+                  {item.papers && (
+                    <div className="programPapers">
+                      {item.papers.map((paper) => (
+                        <article className="programPaper" key={paper.title}>
+                          <h4>{paper.title}</h4>
+                          <p>{paper.authors}</p>
+                        </article>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
-                <span>{item.status}</span>
+                <span>
+                  {item.papers
+                    ? `${item.papers.length} papers`
+                    : item.type === "Keynote"
+                    ? "TBD"
+                    : item.type}
+                </span>
               </div>
             ))}
+          </div>
+
+          <div className="posterProgramBlock">
+            <p className="eyebrow">Poster Presentations</p>
+
+            <h3>Posters on display during coffee breaks and lunch</h3>
+
+            <p>
+              Poster presentations will remain available during the scheduled
+              coffee breaks and lunch period.
+            </p>
+
+            <div className="posterProgramGrid">
+              {posterPresentations.map((poster) => (
+                <article className="posterProgramCard" key={poster.title}>
+                  <h4>{poster.title}</h4>
+                  <p>{poster.authors}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
