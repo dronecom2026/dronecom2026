@@ -200,18 +200,26 @@ const previousEditions = [
   },
 ];
 
+const keynoteSpeaker = {
+  name: "Joerg Widmer",
+  affiliation: "IMDEA Networks Institute, Madrid, Spain",
+  title: "Wireless Sensing for Aerial Networks: From Localization to Coherent Imaging",
+  bio: "Joerg Widmer is Research Professor and Research Director of IMDEA Networks in Madrid, Spain, where he leads the Wireless Networking Research Group. Previously, he worked at DOCOMO Euro-Labs in Munich, Germany and EPFL, Switzerland, and has held visiting researcher positions at ICSI Berkeley (USA), University College London (UK), and TU Darmstadt (Germany). His research focuses on wireless networks, ranging from extremely high frequency millimeter-wave communication and wireless sensing to mobile network architectures. Joerg Widmer authored over 250 conference and journal papers, and holds 14 patents. He was awarded an ERC consolidator grant, the Friedrich Wilhelm Bessel Research Award of the Alexander von Humboldt Foundation, a Mercator Fellowship of the German Research Foundation, a Spanish Ramon y Cajal grant, as well as 17 best paper awards. He is an IEEE Fellow and Distinguished Member of the ACM.",
+  abstract: "Next generation wireless communication systems are increasingly capable of providing accurate sensing in addition to connectivity. By reusing spectrum and infrastructure, they can provide capabilities traditionally associated with radar, including precise localization and motion tracking, without dedicated sensing hardware. This is particularly attractive for aerial networks, where payload, energy and spectrum are scarce. Drones play two roles, as platforms that carry wireless nodes and as targets that networks must detect and track. This keynote discusses the evolution of wireless sensing from device localization to coherent imaging in distributed multi-static wireless systems, and what it offers aerial platforms. The talk covers device-free detection and tracking with communication signals, how the time and frequency offsets of unsynchronized devices can be canceled rather than estimated, how sparse frequency bands can be combined to increase resolution, and how many distributed links can cooperate to form synthetic apertures for coherent imaging of dynamic scenes. Because payload power is the limiting resource on a flying platform, it also shows how spike-based receivers reduce the power of the sensing chain several-fold. Throughout, we emphasize experimental testbeds and real-world demonstrations, and highlight the practical challenges and opportunities in turning communication networks into pervasive terrestrial and airborne sensing infrastructures.",
+};
+
 const programItems = [
   {
-    time: "08:30–08:45",
+    time: "08:50–09:00",
     title: "Welcome and Opening Remarks",
     type: "Opening",
     details: "Workshop Organizers",
   },
   {
-    time: "08:45–09:45",
-    title: "Keynote 1",
-    type: "Keynote",
-    details: "Speaker TBD",
+    time: "09:00–09:45",
+    title: "Poster Presentations and Q&A",
+    type: "Poster Session",
+    details: "3 poster presentations · 15 minutes each (including Q&A)",
   },
   {
     time: "09:45–10:15",
@@ -279,9 +287,9 @@ const programItems = [
   },
   {
     time: "13:30–14:30",
-    title: "Keynote 2",
+    title: "Keynote: Wireless Sensing for Aerial Networks",
     type: "Keynote",
-    details: "Speaker TBD",
+    details: "Joerg Widmer · IMDEA Networks Institute, Madrid, Spain",
   },
   {
     time: "14:30–15:30",
@@ -376,7 +384,6 @@ function App() {
   const [topicQuery, setTopicQuery] = useState("");
   const [activeProgram, setActiveProgram] = useState("All");
   const [expandedProgramSessions, setExpandedProgramSessions] = useState({});
-  const [showProgramPosters, setShowProgramPosters] = useState(false);
   const [openEdition, setOpenEdition] = useState(0);
   const [activeSubmissionInfo, setActiveSubmissionInfo] = useState(null);
 
@@ -1044,7 +1051,7 @@ function App() {
                   <span aria-hidden="true">•</span>
                   <strong>12</strong> papers
                   <span aria-hidden="true">•</span>
-                  <strong>3</strong> posters
+                  <strong>3</strong> poster talks
                 </div>
                 <a
                   className="programDownloadButton"
@@ -1065,7 +1072,7 @@ function App() {
               </div>
               <div className="programFact">
                 <span>Time</span>
-                <strong>08:30 – 17:10</strong>
+                <strong>08:50 – 17:10</strong>
               </div>
               <div className="programFact programFactVenue">
                 <span>Venue</span>
@@ -1076,10 +1083,42 @@ function App() {
               </div>
             </div>
 
+            <section id="program-keynote" className="keynoteFeature" aria-labelledby="keynote-feature-title">
+              <div className="keynotePortraitWrap">
+                <img
+                  className="keynotePortrait"
+                  src={`${import.meta.env.BASE_URL}joerg-widmer.jpg`}
+                  alt="Joerg Widmer, keynote speaker"
+                  loading="lazy"
+                />
+                <span className="keynotePortraitTag">Featured keynote speaker</span>
+              </div>
+              <div className="keynoteFeatureContent">
+                <p className="keynoteFeatureEyebrow">13:30–14:30 · Keynote address</p>
+                <h3 id="keynote-feature-title">{keynoteSpeaker.name}</h3>
+                <p className="keynoteAffiliation">{keynoteSpeaker.affiliation}</p>
+                <h4>{keynoteSpeaker.title}</h4>
+                <p className="keynoteIntro">
+                  Exploring how communication signals can also enable precise sensing,
+                  localization, tracking, and coherent imaging for aerial networks.
+                </p>
+                <div className="keynoteDisclosures">
+                  <details className="keynoteDetails">
+                    <summary>Read talk abstract <span aria-hidden="true">+</span></summary>
+                    <p>{keynoteSpeaker.abstract}</p>
+                  </details>
+                  <details className="keynoteDetails">
+                    <summary>Read speaker biography <span aria-hidden="true">+</span></summary>
+                    <p>{keynoteSpeaker.bio}</p>
+                  </details>
+                </div>
+              </div>
+            </section>
+
             <div className="programToolbar">
               <div className="programToolbarTitle">
                 <h3>Day agenda</h3>
-                <p>Tap a technical session to view its papers and authors.</p>
+                <p>Open a technical session or the poster session to explore each presentation.</p>
               </div>
               <div className="programControls" role="group" aria-label="Filter workshop schedule">
                 {["All", "Morning", "Afternoon"].map((item) => (
@@ -1099,13 +1138,16 @@ function App() {
             <div className="programAgendaList">
               {filteredProgram.map((item) => {
                 const hasPapers = Boolean(item.papers?.length);
+                const hasPosters = item.type === "Poster Session";
+                const expandable = hasPapers || hasPosters;
+                const presentations = hasPosters ? posterPresentations : item.papers;
                 const expanded = Boolean(expandedProgramSessions[item.title]);
                 const [startTime, endTime] = item.time.split("–");
                 const isBreak = item.type === "Break";
                 return (
                   <article
                     key={`${item.time}-${item.title}`}
-                    className={`programAgendaRow${isBreak ? " programAgendaRowBreak" : ""}${hasPapers ? " programAgendaRowSession" : ""}`}
+                    className={`programAgendaRow${isBreak ? " programAgendaRowBreak" : ""}${expandable ? " programAgendaRowSession" : ""}`}
                   >
                     <div className="programAgendaTime">
                       <strong>{startTime}</strong>
@@ -1113,7 +1155,7 @@ function App() {
                     </div>
 
                     <div className="programAgendaBody">
-                      {hasPapers ? (
+                      {expandable ? (
                         <>
                           <button
                             type="button"
@@ -1133,7 +1175,9 @@ function App() {
                               <span>{item.details}</span>
                             </span>
                             <span className="programSessionAction">
-                              {expanded ? "Hide papers" : `View ${item.papers.length} papers`}
+                              {expanded
+                                ? (hasPosters ? "Hide posters" : "Hide papers")
+                                : `View ${presentations.length} ${hasPosters ? "posters" : "papers"}`}
                               <span className={expanded ? "programChevron expanded" : "programChevron"} aria-hidden="true">⌄</span>
                             </span>
                           </button>
@@ -1142,7 +1186,7 @@ function App() {
                               id={`program-papers-${programItems.indexOf(item)}`}
                               className="programPaperGrid"
                             >
-                              {item.papers.map((paper, index) => (
+                              {presentations.map((paper, index) => (
                                 <article className="programPaperCard" key={paper.title}>
                                   <span className="programPaperNumber">{String(index + 1).padStart(2, "0")}</span>
                                   <div>
@@ -1162,7 +1206,7 @@ function App() {
                             <p>{item.details}</p>
                           </div>
                           {item.type === "Keynote" && (
-                            <span className="programKeynoteNote">Speaker to be announced</span>
+                            <a className="programKeynoteLink" href="#program-keynote">Speaker &amp; abstract ↑</a>
                           )}
                         </div>
                       )}
@@ -1172,35 +1216,6 @@ function App() {
               })}
             </div>
 
-            <div className="programPosterSection">
-              <button
-                type="button"
-                className="programPosterToggle"
-                onClick={() => setShowProgramPosters((current) => !current)}
-                aria-expanded={showProgramPosters}
-                aria-controls="program-poster-list"
-              >
-                <span className="programPosterToggleCopy">
-                  <small>Poster presentations</small>
-                  <strong>3 posters on display during coffee breaks and lunch</strong>
-                </span>
-                <span className="programSessionAction">
-                  {showProgramPosters ? "Hide posters" : "View posters"}
-                  <span className={showProgramPosters ? "programChevron expanded" : "programChevron"} aria-hidden="true">⌄</span>
-                </span>
-              </button>
-              {showProgramPosters && (
-                <div id="program-poster-list" className="programPosterGrid">
-                  {posterPresentations.map((poster, index) => (
-                    <article className="programPosterCard" key={poster.title}>
-                      <small>Poster {String(index + 1).padStart(2, "0")}</small>
-                      <h4>{poster.title}</h4>
-                      <p>{poster.authors}</p>
-                    </article>
-                  ))}
-                </div>
-              )}
-            </div>
           </div>
         </section>
 
