@@ -1083,42 +1083,10 @@ function App() {
               </div>
             </div>
 
-            <section id="program-keynote" className="keynoteFeature" aria-labelledby="keynote-feature-title">
-              <div className="keynotePortraitWrap">
-                <img
-                  className="keynotePortrait"
-                  src={`${import.meta.env.BASE_URL}joerg-widmer.jpg`}
-                  alt="Joerg Widmer, keynote speaker"
-                  loading="lazy"
-                />
-                <span className="keynotePortraitTag">Featured keynote speaker</span>
-              </div>
-              <div className="keynoteFeatureContent">
-                <p className="keynoteFeatureEyebrow">13:30–14:30 · Keynote address</p>
-                <h3 id="keynote-feature-title">{keynoteSpeaker.name}</h3>
-                <p className="keynoteAffiliation">{keynoteSpeaker.affiliation}</p>
-                <h4>{keynoteSpeaker.title}</h4>
-                <p className="keynoteIntro">
-                  Exploring how communication signals can also enable precise sensing,
-                  localization, tracking, and coherent imaging for aerial networks.
-                </p>
-                <div className="keynoteDisclosures">
-                  <details className="keynoteDetails">
-                    <summary>Read talk abstract <span aria-hidden="true">+</span></summary>
-                    <p>{keynoteSpeaker.abstract}</p>
-                  </details>
-                  <details className="keynoteDetails">
-                    <summary>Read speaker biography <span aria-hidden="true">+</span></summary>
-                    <p>{keynoteSpeaker.bio}</p>
-                  </details>
-                </div>
-              </div>
-            </section>
-
             <div className="programToolbar">
               <div className="programToolbarTitle">
                 <h3>Day agenda</h3>
-                <p>Open a technical session or the poster session to explore each presentation.</p>
+                <p>View keynote details below or open a technical or poster session to explore its presentations.</p>
               </div>
               <div className="programControls" role="group" aria-label="Filter workshop schedule">
                 {["All", "Morning", "Afternoon"].map((item) => (
@@ -1147,7 +1115,7 @@ function App() {
                 return (
                   <article
                     key={`${item.time}-${item.title}`}
-                    className={`programAgendaRow${isBreak ? " programAgendaRowBreak" : ""}${expandable ? " programAgendaRowSession" : ""}`}
+                    className={`programAgendaRow${isBreak ? " programAgendaRowBreak" : ""}${expandable ? " programAgendaRowSession" : ""}${item.type === "Keynote" ? " programAgendaRowKeynote" : ""}`}
                   >
                     <div className="programAgendaTime">
                       <strong>{startTime}</strong>
@@ -1205,12 +1173,43 @@ function App() {
                             <h3>{item.title}</h3>
                             <p>{item.details}</p>
                           </div>
-                          {item.type === "Keynote" && (
-                            <a className="programKeynoteLink" href="#program-keynote">Speaker &amp; abstract ↑</a>
-                          )}
+
                         </div>
                       )}
                     </div>
+                    {item.type === "Keynote" && (
+                      <section
+                        id="program-keynote"
+                        className="keynoteFeature programAgendaKeynote"
+                        aria-labelledby="keynote-feature-title"
+                      >
+                        <div className="keynotePortraitWrap">
+                          <img
+                            className="keynotePortrait"
+                            src={`${import.meta.env.BASE_URL}joerg-widmer.jpg`}
+                            alt="Joerg Widmer, DroneCom 2026 keynote speaker"
+                            loading="lazy"
+                          />
+                          <span className="keynotePortraitTag">Keynote speaker</span>
+                        </div>
+                        <div className="keynoteFeatureContent">
+                          <p className="keynoteFeatureEyebrow">13:30–14:30 · Keynote address</p>
+                          <h3 id="keynote-feature-title">{keynoteSpeaker.name}</h3>
+                          <p className="keynoteAffiliation">{keynoteSpeaker.affiliation}</p>
+                          <h4>{keynoteSpeaker.title}</h4>
+                          <div className="keynoteInformation">
+                            <section className="keynoteInfoSection" aria-labelledby="keynote-abstract-title">
+                              <h5 id="keynote-abstract-title">Talk Abstract</h5>
+                              <p>{keynoteSpeaker.abstract}</p>
+                            </section>
+                            <section className="keynoteInfoSection" aria-labelledby="keynote-bio-title">
+                              <h5 id="keynote-bio-title">Speaker Biography</h5>
+                              <p>{keynoteSpeaker.bio}</p>
+                            </section>
+                          </div>
+                        </div>
+                      </section>
+                    )}
                   </article>
                 );
               })}
