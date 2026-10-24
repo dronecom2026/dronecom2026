@@ -2130,3 +2130,111 @@ main {
     white-space: normal;
   }
 }
+
+
+/* =========================
+   MATCH CONSTRAINED WIDTH
+   FOR COMMITTEES + PROGRAM
+========================= */
+
+#committees.section {
+  width: min(1180px, calc(100% - 40px));
+}
+
+#program.section.alt.programSection {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#program .programShell {
+  width: min(1180px, 100%);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  #committees.section {
+    width: 100%;
+  }
+
+  #program.section.alt.programSection {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  #program .programShell {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+
+/* DroneCom 2026: keynote speaker, official morning posters, accessible session links */
+.keynoteFeature {
+  display: grid;
+  grid-template-columns: minmax(190px, 255px) minmax(0, 1fr);
+  gap: clamp(20px, 3.2vw, 40px);
+  margin: 22px 0 32px;
+  padding: clamp(20px, 2.8vw, 32px);
+  border-radius: 24px;
+  background: linear-gradient(122deg, #071f41 4%, #0e4386 100%);
+  border: 1px solid rgba(131, 194, 255, .22);
+  color: #fff;
+  box-shadow: 0 18px 48px rgba(7, 37, 84, .13);
+  scroll-margin-top: 105px;
+  min-width: 0;
+}
+.keynotePortraitWrap { position: relative; min-width: 0; align-self: stretch; }
+.keynotePortrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 310px;
+  max-height: 490px;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 16px;
+  background: #dbe9f6;
+}
+.keynotePortraitTag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: #092852;
+  background: rgba(255, 255, 255, .94);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 850;
+  text-align: center;
+}
+.keynoteFeatureContent { min-width: 0; align-self: center; }
+.keynoteFeatureEyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 850; color: #8de8ff; letter-spacing: .12em; text-transform: uppercase; }
+.keynoteFeatureContent h3 { margin: 0; font-size: clamp(28px, 3vw, 42px); font-weight: 900; line-height: 1.09; letter-spacing: -.035em; }
+.keynoteAffiliation { margin: 7px 0 17px; color: #afd8f5; font-weight: 720; font-size: 14px; }
+.keynoteFeatureContent h4 { margin: 0; color: white; font-size: clamp(19px, 2vw, 27px); line-height: 1.25; letter-spacing: -.02em; }
+.keynoteIntro { max-width: 750px; margin: 12px 0 20px; font-size: 14px; line-height: 1.65; color: #dbeeff; }
+.keynoteDisclosures { display: grid; gap: 9px; }
+.keynoteDetails { min-width: 0; border: 1px solid rgba(255, 255, 255, .22); border-radius: 12px; background: rgba(255, 255, 255, .065); }
+.keynoteDetails summary { cursor: pointer; list-style: none; user-select: none; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 800; }
+.keynoteDetails summary::-webkit-details-marker { display: none; }
+.keynoteDetails summary:focus-visible { outline: 3px solid #91e8ff; outline-offset: 2px; border-radius: 10px; }
+.keynoteDetails summary span { font-size: 22px; line-height: 1; margin-left: 8px; transition: transform .2s ease; }
+.keynoteDetails[open] summary span { transform: rotate(45deg); }
+.keynoteDetails p { margin: 0; padding: 0 16px 16px; line-height: 1.68; font-size: 13.5px; color: #e0f0ff; }
+.programKeynoteLink { flex-shrink: 0; padding: 9px 13px; border-radius: 99px; color: #075abb; font-size: 12px; font-weight: 800; background: #eaf3ff; }
+.programKeynoteLink:hover { background: #d7eaff; }
+@media (max-width: 760px) {
+  .keynoteFeature { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
+  .keynotePortraitWrap { width: 100%; max-width: 310px; }
+  .keynotePortrait { height: 245px; min-height: 245px; }
+  .keynoteFeatureContent h3 { font-size: 31px; }
+  .programKeynoteLink { margin-top: 4px; }
+}
+@media (max-width: 420px) {
+  .keynotePortraitWrap { max-width: 100%; }
+  .keynoteFeature { margin-top: 16px; padding: 15px; }
+}
