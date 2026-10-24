@@ -2238,3 +2238,83 @@ main {
   .keynotePortraitWrap { max-width: 100%; }
   .keynoteFeature { margin-top: 16px; padding: 15px; }
 }
+
+
+/* Keynote shown in its actual 13:30â€“14:30 agenda slot, fully visible without dropdowns */
+#program .programAgendaRowKeynote {
+  border-color: #b7cee9;
+  border-left: 4px solid #1374c5;
+  background: #f9fcff;
+}
+
+#program .programAgendaKeynote {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 8px 0 2px;
+  padding: clamp(20px, 2.6vw, 30px);
+  box-shadow: none;
+  grid-template-columns: minmax(170px, 225px) minmax(0, 1fr);
+  gap: clamp(18px, 2.5vw, 34px);
+}
+
+#program .programAgendaKeynote .keynoteFeatureContent {
+  align-self: start;
+}
+
+#program .programAgendaKeynote .keynotePortrait {
+  max-height: 400px;
+  min-height: 260px;
+}
+
+#program .programAgendaKeynote .keynoteInformation {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+#program .programAgendaKeynote .keynoteInfoSection {
+  min-width: 0;
+  border-top: 1px solid rgba(194, 225, 255, 0.24);
+  padding-top: 17px;
+}
+
+#program .programAgendaKeynote .keynoteInfoSection h5 {
+  margin: 0 0 9px;
+  color: #95eaff;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+#program .programAgendaKeynote .keynoteInfoSection p {
+  margin: 0;
+  color: #e0f0ff;
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  #program .programAgendaKeynote {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  #program .programAgendaKeynote .keynotePortraitWrap {
+    max-width: 235px;
+  }
+  #program .programAgendaKeynote .keynotePortrait {
+    height: 260px;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  #program .programAgendaKeynote {
+    padding: 16px;
+  }
+  #program .programAgendaKeynote .keynoteInfoSection p {
+    font-size: 13.5px;
+  }
+}
