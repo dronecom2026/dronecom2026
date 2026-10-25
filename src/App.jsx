@@ -23,7 +23,7 @@ const importantDates = [
   },
   {
     label: "Camera Ready",
-    date: "Aug 31, 2026",
+    date: "Aug 30, 2026",
     note: "Final version due",
   },
   {
@@ -90,7 +90,7 @@ const tpcCoChairs = [
 
 const publicityOutreachChairs = [
   {
-    name: "Dr. Tamer Mohamed",
+    name: "Tamer Mohamed",
     affiliation: "Canadian University Dubai, UAE",
   },
 ];
@@ -200,48 +200,181 @@ const previousEditions = [
   },
 ];
 
+const keynoteSpeaker = {
+  name: "Joerg Widmer",
+  affiliation: "IMDEA Networks Institute, Madrid, Spain",
+  title: "Wireless Sensing for Aerial Networks: From Localization to Coherent Imaging",
+  bio: "Joerg Widmer is Research Professor and Research Director of IMDEA Networks in Madrid, Spain, where he leads the Wireless Networking Research Group. Previously, he worked at DOCOMO Euro-Labs in Munich, Germany and EPFL, Switzerland, and has held visiting researcher positions at ICSI Berkeley (USA), University College London (UK), and TU Darmstadt (Germany). His research focuses on wireless networks, ranging from extremely high frequency millimeter-wave communication and wireless sensing to mobile network architectures. Joerg Widmer authored over 250 conference and journal papers, and holds 14 patents. He was awarded an ERC consolidator grant, the Friedrich Wilhelm Bessel Research Award of the Alexander von Humboldt Foundation, a Mercator Fellowship of the German Research Foundation, a Spanish Ramon y Cajal grant, as well as 17 best paper awards. He is an IEEE Fellow and Distinguished Member of the ACM.",
+  abstract: "Next generation wireless communication systems are increasingly capable of providing accurate sensing in addition to connectivity. By reusing spectrum and infrastructure, they can provide capabilities traditionally associated with radar, including precise localization and motion tracking, without dedicated sensing hardware. This is particularly attractive for aerial networks, where payload, energy and spectrum are scarce. Drones play two roles, as platforms that carry wireless nodes and as targets that networks must detect and track. This keynote discusses the evolution of wireless sensing from device localization to coherent imaging in distributed multi-static wireless systems, and what it offers aerial platforms. The talk covers device-free detection and tracking with communication signals, how the time and frequency offsets of unsynchronized devices can be canceled rather than estimated, how sparse frequency bands can be combined to increase resolution, and how many distributed links can cooperate to form synthetic apertures for coherent imaging of dynamic scenes. Because payload power is the limiting resource on a flying platform, it also shows how spike-based receivers reduce the power of the sensing chain several-fold. Throughout, we emphasize experimental testbeds and real-world demonstrations, and highlight the practical challenges and opportunities in turning communication networks into pervasive terrestrial and airborne sensing infrastructures.",
+};
+
 const programItems = [
   {
-    time: "09:00",
-    title: "Opening Remarks",
-    speaker: "Workshop Organizers",
-    status: "Planned",
+    time: "08:30–08:45",
+    title: "Welcome and Opening Remarks",
+    type: "Opening",
+    details: "Workshop Organizers",
   },
   {
-    time: "09:30",
-    title: "Technical Session I",
-    speaker: "Accepted papers",
-    status: "TBA",
+    time: "08:45–09:30",
+    title: "Poster Presentations and Q&A",
+    type: "Poster Session",
+    details: "3 poster presentations · 15 minutes each (including Q&A)",
   },
   {
-    time: "11:00",
-    title: "Invited Talk / Keynote",
-    speaker: "Speaker to be announced",
-    status: "TBA",
+    time: "09:30–10:00",
+    title: "Coffee and Networking",
+    type: "Break",
+    details: "Networking break",
   },
   {
-    time: "12:00",
-    title: "Lunch Break",
-    speaker: "Conference schedule",
-    status: "Planned",
+    time: "10:00–11:00",
+    title: "Session 1: Drone Security and Attack Detection",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "Attention-Guided UAV Intrusion Detection with BSO-Based Feature Selection",
+        authors:
+          "Akshat Gaurav (Asia University); Varsha Arya (Hong Kong Metropolitan University); Ching-Hsien Hsu (Asia University); Kwok Tai Chui (Hong Kong Metropolitan University); Brij B. Gupta (Asia University)",
+      },
+      {
+        title:
+          "PDT-TCN: Prefix-Drop Temporal Convolutional Networks for Early Attack Detection in UAV-GCS Communications",
+        authors:
+          "Jakub Siłka, Michał Wieczorek, Marcin Woźniak (Silesian University of Technology)",
+      },
+      {
+        title:
+          "GNSS-Spoofing-Resilient Drone-Assisted 5G Backhaul via Cooperative Detection and Adaptive Link Reconfiguration",
+        authors:
+          "Abima Obim Abima, Ali Kashif Bashir, Sara Holm, Muhammad Atif Ur Rehman (Manchester Metropolitan University); MD. Israfil Biswas (University of Bedfordshire); Alex Akinbi (Manchester Metropolitan University)",
+      },
+    ],
   },
   {
-    time: "13:30",
-    title: "Technical Session II",
-    speaker: "Accepted papers",
-    status: "TBA",
+    time: "11:00–12:00",
+    title: "Session 2: Trust, Authentication and Resilient Drone Control",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "Measuring the Safety of Drone Command-and-Control under Link Degradation",
+        authors:
+          "Hannaneh B. Pasandi (UC Berkeley); Mohammad Sepahi (Old Dominion University, Rivian Inc.)",
+      },
+      {
+        title:
+          "Post-Quantum Safe Isogeny-Based Authenticated Key Establishment Protocol for Drones-Assisted 6G-Enabled Smart City Environments",
+        authors:
+          "Debnath Ghosh (International Institute of Information Technology, Hyderabad); Basudeb Bera (National University of Singapore); Ashok Kumar Das (International Institute of Information Technology, Hyderabad); Biplab Sikdar (National University of Singapore)",
+      },
+      {
+        title:
+          "Multi-Factor Trust and Access Control in Drone-Assisted Edge Networks",
+        authors:
+          "Deepak Puthal (UAE University); Raja Jayaraman (New Mexico State University); Venkata Prasanth Yanambaka (Texas Woman's University); Pradip Kumar Sharma (University of Aberdeen)",
+      },
+    ],
   },
   {
-    time: "15:30",
-    title: "Panel Discussion",
-    speaker: "Researchers and practitioners",
-    status: "TBA",
+    time: "12:00–13:30",
+    title: "Lunch and Networking",
+    type: "Break",
+    details: "Lunch boxes at Cactus Cafe, Level 2",
   },
   {
-    time: "16:30",
+    time: "13:30–14:30",
+    title: "Keynote: Wireless Sensing for Aerial Networks",
+    type: "Keynote",
+    details: "Joerg Widmer · IMDEA Networks Institute, Madrid, Spain",
+  },
+  {
+    time: "14:30–15:30",
+    title: "Session 3: UAV-Enabled Edge Computing and Resource Allocation",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "RAVEN: Reverse Auction-Based Resource Allocation for UAV-Enabled Edge Computing",
+        authors:
+          "Ayan Mondal, Mir Razee M., Vansh Kathnawal, Karri Trived (Indian Institute of Technology Indore)",
+      },
+      {
+        title:
+          "UAV-Assisted Resource Optimization for Priority-Aware and Trustworthy Services",
+        authors:
+          "Muhammad Omair Butt (Lakehead University); Muhammad Naeem (COMSATS University); Waleed Ejaz (Lakehead University)",
+      },
+      {
+        title:
+          "Stability-Oriented Multi-Objective Container Scheduling for UAV-Assisted Edge Networks via TD3",
+        authors:
+          "Shabir Ahmad (Gachon University); Fahim Ullah Khan, Ibrar Ali Shah (UET Mardan); Abdul Aziz Barnawi, Muhammad Shahid Anwar (King Fahd University of Petroleum and Minerals)",
+      },
+    ],
+  },
+  {
+    time: "15:30–16:00",
+    title: "Coffee and Networking",
+    type: "Break",
+    details: "Networking break",
+  },
+  {
+    time: "16:00–17:00",
+    title: "Session 4: Learning-Driven Aerial and Non-Terrestrial Networks",
+    type: "Technical Session",
+    details: "Full paper presentation + Q&A (20 min each)",
+    papers: [
+      {
+        title:
+          "Quantum Deep Reinforcement Learning On-the-Fly: An Energy Efficient Scheme for Autonomous Aerial Vehicles",
+        authors:
+          "Anushka Nehra (Thapar University Patiala); Neeraj Joshi (Bennett University); Rajat Chaudhary (Marwadi University); Isaac Woungang (Toronto Metropolitan University)",
+      },
+      {
+        title:
+          "Joint Trajectory and Resource Optimization for Dual Aerial ARIS-assisted NOMA-ITNTN",
+        authors:
+          "Vangara Saiprudhvi (Vellore Institute of Technology); Keshav Singh (National Sun Yat-sen University); Hariharan Subramaniyam (Vellore Institute of Technology); Chih-Peng Li (National Sun Yat-sen University)",
+      },
+      {
+        title:
+          "Adaptive Multi-Band Hybrid RF/FSO Backhaul Optimization for Non-Terrestrial Networks Using Deep Reinforcement Learning",
+        authors:
+          "Muhammad Abubakar Rashid, Muhammad Hannan Akram, Wassi Haider Kabir (National University of Sciences and Technology); Haejoon Jung (Kyung Hee University); Syed Ali Hassan (National University of Sciences and Technology)",
+      },
+    ],
+  },
+  {
+    time: "17:00–17:10",
     title: "Closing Remarks",
-    speaker: "Workshop Organizers",
-    status: "Planned",
+    type: "Closing",
+    details: "Workshop Organizers",
+  },
+];
+
+const posterPresentations = [
+  {
+    title:
+      "CMA-FL: Cognitive Multi-Agent Federated Learning for Resource-Aware Drone Communication Attack Detection",
+    authors:
+      "Pronaya Bhattacharya (Amity University); Somnath Bera (Maulana Abul Kalam Azad University of Technology, West Bengal); Anwesha Mukherjee (Mahishadal Raj College); Debashis De (Maulana Abul Kalam Azad University of Technology, West Bengal); Kwok Tai Chui (Hong Kong Metropolitan University); Brij B. Gupta (Asia University); Thippa Reddy Gadekallu (Zhejiang A&F University)",
+  },
+  {
+    title:
+      "Secrecy Rate Analysis of RIS-Assisted UAV Networks Using DDQN Network",
+    authors:
+      "Laxmi, Vipul Dixit, Ishan Budhiraja (Bennett University); Swati Kumari (Deakin University); Neeraj Kumar (Thapar University Patiala)",
+  },
+  {
+    title:
+      "Distributed Deep Learning-Based CQI Prediction for UAV-Assisted URLLC V2X Networks",
+    authors:
+      "Muhammed Mufeed M, Sneha S, Suresh Chavhan (Indian Institute of Science Education and Research, Thiruvananthapuram)",
   },
 ];
 
@@ -250,7 +383,9 @@ function App() {
   const [activeScope, setActiveScope] = useState("motivation");
   const [topicQuery, setTopicQuery] = useState("");
   const [activeProgram, setActiveProgram] = useState("All");
+  const [expandedProgramSessions, setExpandedProgramSessions] = useState({});
   const [openEdition, setOpenEdition] = useState(0);
+  const [activeSubmissionInfo, setActiveSubmissionInfo] = useState(null);
 
   const filteredTopics = useMemo(() => {
     return topics.filter((topic) =>
@@ -261,12 +396,15 @@ function App() {
   const filteredProgram = useMemo(() => {
     if (activeProgram === "All") return programItems;
 
+    const startHour = (item) =>
+      Number(item.time.split("–")[0].split(":")[0]);
+
     if (activeProgram === "Morning") {
-      return programItems.filter((item) => Number(item.time.split(":")[0]) < 12);
+      return programItems.filter((item) => startHour(item) < 12);
     }
 
     if (activeProgram === "Afternoon") {
-      return programItems.filter((item) => Number(item.time.split(":")[0]) >= 12);
+      return programItems.filter((item) => startHour(item) >= 12);
     }
 
     return programItems;
@@ -275,6 +413,43 @@ function App() {
   return (
     <div className="site">
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+
+      <style>{`
+        .openAccessBanner > div {
+          min-width: 0;
+        }
+
+        .openAccessBanner h3 {
+          margin-bottom: 22px;
+        }
+
+        .openAccessBanner p:not(.eyebrow) {
+          margin: 0 0 18px;
+          line-height: 1.72;
+          text-align: justify;
+          text-justify: inter-word;
+          hyphens: auto;
+        }
+
+        .openAccessBanner ul {
+          margin: 6px 0 0;
+          padding-left: 28px;
+          line-height: 1.65;
+        }
+
+        .openAccessBanner li + li {
+          margin-top: 3px;
+        }
+
+        @media (max-width: 760px) {
+          .openAccessBanner p:not(.eyebrow) {
+            text-align: left;
+            hyphens: none;
+          }
+        }
+
+      `}</style>
 
       <main>
         <section id="home" className="hero">
@@ -316,9 +491,19 @@ function App() {
               </div>
 
               <div className="heroActions">
-                <a href="#cfp" className="primaryBtn">
+                <a
+                  href="https://www.sigmobile.org/mobicom/2026/registration.html"
+                  className="primaryBtn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Register Now
+                </a>
+
+                <a href="#cfp" className="secondaryBtn">
                   View Call for Papers
                 </a>
+
                 <a href="#submission" className="secondaryBtn">
                   Submission Details
                 </a>
@@ -327,8 +512,8 @@ function App() {
 
             <div className="heroCard">
               <p>Next Deadline</p>
-              <h2>June 26, 2026</h2>
-              <span>Paper Submission</span>
+              <h2>Aug 30, 2026</h2>
+              <span>Camera Ready</span>
 
               <div className="miniTimeline">
                 {importantDates.map((item, index) => (
@@ -515,42 +700,221 @@ function App() {
             </p>
           </div>
 
-          <div className="submissionInstructions">
-            <h3>Submission Instructions</h3>
+          <div className="submissionPanel openAccessBanner">
+            <div>
+              <p className="eyebrow light">Important ACM Open Access Update</p>
+              <h3>ACM Open Access Publishing Model for 2026</h3>
 
-            <ul>
-              <li>
-                Submissions must present original and previously unpublished
-                results and should clearly describe their relationship to
-                existing work and their potential impact on future research.
-              </li>
+              <p>
+                Starting January 1, 2026, ACM will fully transition to Open
+                Access. All ACM publications, including those from ACM-sponsored
+                conferences, will be 100% Open Access.
+              </p>
 
-              <li>
-                Papers must be submitted in PDF format using the ACM templates
-                in standard two-column format with a 10-point font on US Letter
-                paper (8.5 × 11 inches).
-              </li>
+              <p>
+                Authors will have two primary options for publishing Open Access
+                articles with ACM: the ACM Open institutional model or payment
+                of an Article Processing Charge (APC). With more than 2,600
+                institutions already participating in ACM Open, the majority of
+                ACM-sponsored conference papers will not require APCs from
+                authors or conferences; currently, approximately 76% fall into
+                this category.
+              </p>
 
-              <li>
-                Technical papers must not exceed 6 pages in total, including
-                references.
-              </li>
+              <p>
+                Authors from institutions that do not participate in ACM Open
+                will need to pay an APC unless they qualify for a financial
+                waiver. Waivers are rare and are granted according to specific
+                ACM criteria.
+              </p>
 
-              <li>
-                Appendix sections are allowed provided the entire submission
-                remains within the six-page limit.
-              </li>
+              <p>
+                To ease the transition in 2026, ACM has approved a temporary
+                subsidy:
+              </p>
 
-              <li>
-                Submissions must include author names and affiliations for
-                single-blind peer review by the Program Committee.
-              </li>
+              <ul>
+                <li>
+                  <strong>$250 APC</strong> for ACM/SIG members
+                </li>
+                <li>
+                  <strong>$350 APC</strong> for non-members
+                </li>
+              </ul>
+            </div>
 
-              <li>
-                Authors of accepted papers are expected to present and discuss
-                their work at the workshop.
-              </li>
-            </ul>
+            <a
+              className="submitButton"
+              href="https://www.acm.org/publications/policies/policy-on-discretionary-open-access-apc-waivers"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Review ACM APC Waiver Policy
+            </a>
+          </div>
+
+          <div className="submissionAccordion">
+            <div className="submissionAccordionTabs">
+              <button
+                type="button"
+                className={
+                  activeSubmissionInfo === "instructions"
+                    ? "submissionAccordionTrigger active"
+                    : "submissionAccordionTrigger"
+                }
+                onClick={() =>
+                  setActiveSubmissionInfo(
+                    activeSubmissionInfo === "instructions"
+                      ? null
+                      : "instructions"
+                  )
+                }
+                aria-expanded={activeSubmissionInfo === "instructions"}
+                aria-controls="submission-instructions-panel"
+              >
+                <span>
+                  <small>Author Guidelines</small>
+                  <strong>Submission Instructions</strong>
+                </span>
+                <b>{activeSubmissionInfo === "instructions" ? "−" : "+"}</b>
+              </button>
+
+              <button
+                type="button"
+                className={
+                  activeSubmissionInfo === "manuscript"
+                    ? "submissionAccordionTrigger active"
+                    : "submissionAccordionTrigger"
+                }
+                onClick={() =>
+                  setActiveSubmissionInfo(
+                    activeSubmissionInfo === "manuscript" ? null : "manuscript"
+                  )
+                }
+                aria-expanded={activeSubmissionInfo === "manuscript"}
+                aria-controls="final-manuscript-panel"
+              >
+                <span>
+                  <small>Camera-Ready Guidelines</small>
+                  <strong>Format Your Final Manuscript</strong>
+                </span>
+                <b>{activeSubmissionInfo === "manuscript" ? "−" : "+"}</b>
+              </button>
+            </div>
+
+            {activeSubmissionInfo === "instructions" && (
+              <div
+                id="submission-instructions-panel"
+                className="submissionAccordionContent"
+              >
+                <h3>Submission Instructions</h3>
+
+                <ul>
+                  <li>
+                    Submissions must present original and previously unpublished
+                    results and should clearly describe their relationship to
+                    existing work and their potential impact on future research.
+                  </li>
+
+                  <li>
+                    Papers must be submitted in PDF format using the ACM templates
+                    in standard two-column format with a 10-point font on US Letter
+                    paper (8.5 × 11 inches).
+                  </li>
+
+                  <li>
+                    Technical papers must not exceed 6 pages in total, including
+                    references.
+                  </li>
+
+                  <li>
+                    Appendix sections are allowed provided the entire submission
+                    remains within the six-page limit.
+                  </li>
+
+                  <li>
+                    Submissions must include author names and affiliations for
+                    single-blind peer review by the Program Committee.
+                  </li>
+
+                  <li>
+                    Authors of accepted papers are expected to present and discuss
+                    their work at the workshop.
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {activeSubmissionInfo === "manuscript" && (
+              <div
+                id="final-manuscript-panel"
+                className="submissionAccordionContent"
+              >
+                <h3>Format Your Final Manuscript</h3>
+
+                <p>
+                  Please use the latest ACM proceedings template for your final
+                  manuscript. Do not manually modify the ACM template&apos;s margins,
+                  column dimensions, font settings, or spacing.
+                </p>
+
+                <p>
+                  <strong>For LaTeX, please use:</strong>
+                </p>
+
+                <p className="latexCommand">
+                  <code>{"\\documentclass[sigconf, 10pt]{acmart}"}</code>
+                </p>
+
+                <p>
+                  The final manuscript should satisfy the DroneCom 2026 HotCRP
+                  final-version requirements:
+                </p>
+
+                <ul>
+                  <li>Paper size: US Letter (8.5 × 11 inches)</li>
+                  <li>Two-column format</li>
+                  <li>Text block: 7 × 9.25 inches</li>
+                  <li>Body font: 9 +/- 0.1 pt</li>
+                  <li>Line height: 11 pt</li>
+                  <li>Maximum length: 6 pages</li>
+                  <li>Appendix sections are allowed.</li>
+                  <li>Do not number the pages of the final paper.</li>
+                  <li>
+                    Include the appropriate ACM Computing Classification System
+                    (CCS) indexing information.
+                  </li>
+                  <li>Use standard, properly embedded fonts.</li>
+                  <li>
+                    Avoid special characters or non-standard fonts that may cause
+                    problems during processing or printing.
+                  </li>
+                  <li>
+                    Carefully check that the title and abstract in HotCRP exactly
+                    match the final manuscript and do not contain LaTeX commands or
+                    symbols.
+                  </li>
+                </ul>
+
+                <p>
+                  <strong>Important:</strong> Authors should use the ACM{" "}
+                  <code>sigconf</code> template as provided and should not manually
+                  change the margins or page layout. The DroneCom HotCRP PDF checker
+                  will be used to verify the final manuscript.
+                </p>
+
+                <p>
+                  The ACM proceedings templates are available at:{" "}
+                  <a
+                    href="http://www.acm.org/publications/proceedings-template"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    ACM Proceedings Template
+                  </a>
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="dateGrid">
@@ -671,41 +1035,190 @@ function App() {
           </div>
         </section>
 
-        <section id="program" className="section alt">
-          <div className="sectionHeader center">
-            <p className="eyebrow">Program</p>
-            <h2>Workshop Program</h2>
-            <p>
-              The detailed program will be announced after paper acceptance and
-              camera-ready submission.
-            </p>
-          </div>
-
-          <div className="programControls">
-            {["All", "Morning", "Afternoon"].map((item) => (
-              <button
-                key={item}
-                className={activeProgram === item ? "active" : ""}
-                onClick={() => setActiveProgram(item)}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-
-          <div className="programList">
-            {filteredProgram.map((item) => (
-              <div className="programItem" key={`${item.time}-${item.title}`}>
-                <div className="programTime">{item.time}</div>
-
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.speaker}</p>
-                </div>
-
-                <span>{item.status}</span>
+        <section id="program" className="section alt programSection">
+          <div className="programShell">
+            <div className="programHeadingRow">
+              <div className="programHeadingCopy">
+                <p className="eyebrow">Official Workshop Schedule</p>
+                <h2>Workshop Program</h2>
+                <p>
+                  DroneCom 2026 · Friday, October 30, 2026 · Austin, Texas
+                </p>
               </div>
-            ))}
+              <div className="programHeaderActions">
+                <div className="programCount" aria-label="Program overview">
+                  <strong>4</strong> technical sessions
+                  <span aria-hidden="true">•</span>
+                  <strong>12</strong> papers
+                  <span aria-hidden="true">•</span>
+                  <strong>3</strong> poster talks
+                </div>
+                <a
+                  className="programDownloadButton"
+                  href={`${import.meta.env.BASE_URL}DroneCom_2026_Full_Program.pdf`}
+                  download="DroneCom_2026_Full_Program.pdf"
+                  aria-label="Download the complete DroneCom 2026 workshop agenda as a PDF"
+                >
+                  <span className="programDownloadIcon" aria-hidden="true">↓</span>
+                  Download Full Program (PDF)
+                </a>
+              </div>
+            </div>
+
+            <div className="programFacts" aria-label="Workshop event information">
+              <div className="programFact">
+                <span>Date</span>
+                <strong>Friday, October 30, 2026</strong>
+              </div>
+              <div className="programFact">
+                <span>Time</span>
+                <strong>08:30 – 17:10</strong>
+              </div>
+              <div className="programFact programFactVenue">
+                <span>Venue</span>
+                <strong>
+                  Texas Governor&apos;s Room 3.116 · Level 3 · Texas Union Building,
+                  Austin, Texas
+                </strong>
+              </div>
+            </div>
+
+            <div className="programToolbar">
+              <div className="programToolbarTitle">
+                <h3>Day agenda</h3>
+                <p>View keynote details below or open a technical or poster session to explore its presentations.</p>
+              </div>
+              <div className="programControls" role="group" aria-label="Filter workshop schedule">
+                {["All", "Morning", "Afternoon"].map((item) => (
+                  <button
+                    type="button"
+                    key={item}
+                    className={activeProgram === item ? "active" : ""}
+                    aria-pressed={activeProgram === item}
+                    onClick={() => setActiveProgram(item)}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="programAgendaList">
+              {filteredProgram.map((item) => {
+                const hasPapers = Boolean(item.papers?.length);
+                const hasPosters = item.type === "Poster Session";
+                const expandable = hasPapers || hasPosters;
+                const presentations = hasPosters ? posterPresentations : item.papers;
+                const expanded = Boolean(expandedProgramSessions[item.title]);
+                const [startTime, endTime] = item.time.split("–");
+                const isBreak = item.type === "Break";
+                return (
+                  <article
+                    key={`${item.time}-${item.title}`}
+                    className={`programAgendaRow${isBreak ? " programAgendaRowBreak" : ""}${expandable ? " programAgendaRowSession" : ""}${item.type === "Keynote" ? " programAgendaRowKeynote" : ""}`}
+                  >
+                    <div className="programAgendaTime">
+                      <strong>{startTime}</strong>
+                      <span>{endTime}</span>
+                    </div>
+
+                    <div className="programAgendaBody">
+                      {expandable ? (
+                        <>
+                          <button
+                            type="button"
+                            className="programSessionToggle"
+                            aria-expanded={expanded}
+                            aria-controls={`program-papers-${programItems.indexOf(item)}`}
+                            onClick={() =>
+                              setExpandedProgramSessions((current) => ({
+                                ...current,
+                                [item.title]: !current[item.title],
+                              }))
+                            }
+                          >
+                            <span className="programSessionIdentity">
+                              <small className="programAgendaType">{item.type}</small>
+                              <strong>{item.title}</strong>
+                              <span>{item.details}</span>
+                            </span>
+                            <span className="programSessionAction">
+                              {expanded
+                                ? (hasPosters ? "Hide posters" : "Hide papers")
+                                : `View ${presentations.length} ${hasPosters ? "posters" : "papers"}`}
+                              <span className={expanded ? "programChevron expanded" : "programChevron"} aria-hidden="true">⌄</span>
+                            </span>
+                          </button>
+                          {expanded && (
+                            <div
+                              id={`program-papers-${programItems.indexOf(item)}`}
+                              className="programPaperGrid"
+                            >
+                              {presentations.map((paper, index) => (
+                                <article className="programPaperCard" key={paper.title}>
+                                  <span className="programPaperNumber">{String(index + 1).padStart(2, "0")}</span>
+                                  <div>
+                                    <h4>{paper.title}</h4>
+                                    <p>{paper.authors}</p>
+                                  </div>
+                                </article>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="programAgendaBasic">
+                          <div>
+                            <small className="programAgendaType">{item.type}</small>
+                            <h3>{item.title}</h3>
+                            <p>{item.details}</p>
+                          </div>
+
+                        </div>
+                      )}
+                    </div>
+                    {item.type === "Keynote" && (
+                      <section
+                        id="program-keynote"
+                        className="keynoteFeature programAgendaKeynote"
+                        aria-labelledby="keynote-feature-title"
+                      >
+                        <div className="keynotePortraitWrap">
+                          <div className="keynotePhotoFrame">
+                            <img
+                              className="keynotePortrait"
+                              src={`${import.meta.env.BASE_URL}joerg-widmer.jpg`}
+                              alt="Joerg Widmer, DroneCom 2026 keynote speaker"
+                              loading="lazy"
+                            />
+                            <span className="keynotePortraitTag">Keynote speaker</span>
+                          </div>
+                          <div className="keynoteSpeakerCaption">
+                            <h3 id="keynote-feature-title">{keynoteSpeaker.name}</h3>
+                            <p className="keynoteAffiliation">{keynoteSpeaker.affiliation}</p>
+                          </div>
+                        </div>
+                        <div className="keynoteFeatureContent">
+                          <p className="keynoteFeatureEyebrow">13:30–14:30 · Keynote address</p>
+                          <h4>{keynoteSpeaker.title}</h4>
+                          <div className="keynoteInformation">
+                            <section className="keynoteInfoSection" aria-labelledby="keynote-abstract-title">
+                              <h5 id="keynote-abstract-title">Talk Abstract</h5>
+                              <p>{keynoteSpeaker.abstract}</p>
+                            </section>
+                            <section className="keynoteInfoSection" aria-labelledby="keynote-bio-title">
+                              <h5 id="keynote-bio-title">Speaker Biography</h5>
+                              <p>{keynoteSpeaker.bio}</p>
+                            </section>
+                          </div>
+                        </div>
+                      </section>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+
           </div>
         </section>
 
