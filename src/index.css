@@ -2318,3 +2318,87 @@ main {
     font-size: 13.5px;
   }
 }
+
+
+/* October 25 program adjustments: photo above speaker credit and justified keynote text */
+#program .programAgendaKeynote .keynotePortraitWrap {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+#program .programAgendaKeynote .keynotePhotoFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+#program .programAgendaKeynote .keynotePhotoFrame .keynotePortrait {
+  display: block;
+  width: 100%;
+  height: 265px;
+  min-height: 0;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: 16px;
+}
+
+#program .programAgendaKeynote .keynotePortraitTag {
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+#program .programAgendaKeynote .keynoteSpeakerCaption {
+  padding: 15px 5px 0;
+  text-align: center;
+}
+
+#program .programAgendaKeynote .keynoteSpeakerCaption h3 {
+  margin: 0;
+  color: white;
+  font-size: clamp(19px, 1.75vw, 25px);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+#program .programAgendaKeynote .keynoteSpeakerCaption .keynoteAffiliation {
+  margin: 7px 0 0;
+  color: #c8e6ff;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 650;
+}
+
+#program .programAgendaKeynote .keynoteInfoSection p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  line-height: 1.78;
+}
+
+@media (max-width: 760px) {
+  #program .programAgendaKeynote .keynotePortraitWrap {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  #program .programAgendaKeynote .keynotePhotoFrame .keynotePortrait {
+    height: 255px;
+  }
+  #program .programAgendaKeynote .keynoteSpeakerCaption {
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  #program .programAgendaKeynote .keynoteInfoSection p {
+    text-align: left;
+    hyphens: none;
+  }
+}
