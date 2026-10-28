@@ -241,9 +241,9 @@ const programItems = [
       },
       {
         title:
-          "PDT-TCN: Prefix-Drop Temporal Convolutional Networks for Early Attack Detection in UAV-GCS Communications",
+          "Measuring the Safety of Drone Command-and-Control under Link Degradation",
         authors:
-          "Jakub Siłka, Michał Wieczorek, Marcin Woźniak (Silesian University of Technology)",
+          "Hannaneh B. Pasandi (UC Berkeley); Mohammad Sepahi (Old Dominion University, Rivian Inc.)",
       },
       {
         title:
@@ -261,9 +261,9 @@ const programItems = [
     papers: [
       {
         title:
-          "Measuring the Safety of Drone Command-and-Control under Link Degradation",
+          "PDT-TCN: Prefix-Drop Temporal Convolutional Networks for Early Attack Detection in UAV-GCS Communications",
         authors:
-          "Hannaneh B. Pasandi (UC Berkeley); Mohammad Sepahi (Old Dominion University, Rivian Inc.)",
+          "Jakub Siłka, Michał Wieczorek, Marcin Woźniak (Silesian University of Technology)",
       },
       {
         title:
