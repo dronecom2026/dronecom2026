@@ -229,7 +229,7 @@ const programItems = [
   },
   {
     time: "10:00–11:00",
-    title: "Session 1: Drone Security and Attack Detection",
+    title: "Session 1: Drone Security and Communication Resilience",
     type: "Technical Session",
     details: "Full paper presentation + Q&A (20 min each)",
     papers: [
@@ -255,7 +255,7 @@ const programItems = [
   },
   {
     time: "11:00–12:00",
-    title: "Session 2: Trust, Authentication and Resilient Drone Control",
+    title: "Session 2: Drone Attack Detection, Authentication and Trust",
     type: "Technical Session",
     details: "Full paper presentation + Q&A (20 min each)",
     papers: [
